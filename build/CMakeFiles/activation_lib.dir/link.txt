@@ -1,0 +1,2 @@
+/usr/bin/ar qc libactivation_lib.a CMakeFiles/activation_lib.dir/src/neural_network/activation_functions.cpp.o
+/usr/bin/ranlib libactivation_lib.a

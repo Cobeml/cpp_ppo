@@ -3,6 +3,7 @@
 #include <memory>
 #include <cmath>
 #include <algorithm>
+#include <vector>
 
 class ActivationFunction {
 public:

@@ -26,8 +26,19 @@ add_library(dense_layer_lib STATIC
 )
 target_link_libraries(dense_layer_lib matrix_lib activation_lib)
 
+add_library(neural_network_lib STATIC
+    src/neural_network/neural_network.cpp
+)
+target_link_libraries(neural_network_lib dense_layer_lib matrix_lib activation_lib)
+
+# Environment Library
+add_library(cartpole_lib STATIC
+    src/environment/scalable_cartpole.cpp
+)
+
 # Link math library
 target_link_libraries(matrix_lib m)
+target_link_libraries(cartpole_lib m)
 
 # Tests
 enable_testing()
@@ -45,4 +56,14 @@ add_test(NAME ActivationFunctionsTest COMMAND test_activation_functions)
 # Dense Layer Test
 add_executable(test_dense_layer tests/neural_network/test_dense_layer.cpp)
 target_link_libraries(test_dense_layer dense_layer_lib matrix_lib activation_lib)
-add_test(NAME DenseLayerTest COMMAND test_dense_layer) 
+add_test(NAME DenseLayerTest COMMAND test_dense_layer)
+
+# Neural Network Test
+add_executable(test_neural_network tests/neural_network/test_neural_network.cpp)
+target_link_libraries(test_neural_network neural_network_lib dense_layer_lib matrix_lib activation_lib)
+add_test(NAME NeuralNetworkTest COMMAND test_neural_network)
+
+# CartPole Test
+add_executable(test_cartpole tests/environment/test_cartpole.cpp)
+target_link_libraries(test_cartpole cartpole_lib)
+add_test(NAME CartPoleTest COMMAND test_cartpole) 

@@ -166,6 +166,32 @@ dense_layer_lib/fast:
 .PHONY : dense_layer_lib/fast
 
 #=============================================================================
+# Target rules for targets named neural_network_lib
+
+# Build rule for target.
+neural_network_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 neural_network_lib
+.PHONY : neural_network_lib
+
+# fast build rule for target.
+neural_network_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_network_lib.dir/build.make CMakeFiles/neural_network_lib.dir/build
+.PHONY : neural_network_lib/fast
+
+#=============================================================================
+# Target rules for targets named cartpole_lib
+
+# Build rule for target.
+cartpole_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cartpole_lib
+.PHONY : cartpole_lib
+
+# fast build rule for target.
+cartpole_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartpole_lib.dir/build.make CMakeFiles/cartpole_lib.dir/build
+.PHONY : cartpole_lib/fast
+
+#=============================================================================
 # Target rules for targets named test_matrix
 
 # Build rule for target.
@@ -203,6 +229,56 @@ test_dense_layer: cmake_check_build_system
 test_dense_layer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dense_layer.dir/build.make CMakeFiles/test_dense_layer.dir/build
 .PHONY : test_dense_layer/fast
+
+#=============================================================================
+# Target rules for targets named test_neural_network
+
+# Build rule for target.
+test_neural_network: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_neural_network
+.PHONY : test_neural_network
+
+# fast build rule for target.
+test_neural_network/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_neural_network.dir/build.make CMakeFiles/test_neural_network.dir/build
+.PHONY : test_neural_network/fast
+
+#=============================================================================
+# Target rules for targets named test_cartpole
+
+# Build rule for target.
+test_cartpole: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_cartpole
+.PHONY : test_cartpole
+
+# fast build rule for target.
+test_cartpole/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cartpole.dir/build.make CMakeFiles/test_cartpole.dir/build
+.PHONY : test_cartpole/fast
+
+src/environment/scalable_cartpole.o: src/environment/scalable_cartpole.cpp.o
+.PHONY : src/environment/scalable_cartpole.o
+
+# target to build an object file
+src/environment/scalable_cartpole.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartpole_lib.dir/build.make CMakeFiles/cartpole_lib.dir/src/environment/scalable_cartpole.cpp.o
+.PHONY : src/environment/scalable_cartpole.cpp.o
+
+src/environment/scalable_cartpole.i: src/environment/scalable_cartpole.cpp.i
+.PHONY : src/environment/scalable_cartpole.i
+
+# target to preprocess a source file
+src/environment/scalable_cartpole.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartpole_lib.dir/build.make CMakeFiles/cartpole_lib.dir/src/environment/scalable_cartpole.cpp.i
+.PHONY : src/environment/scalable_cartpole.cpp.i
+
+src/environment/scalable_cartpole.s: src/environment/scalable_cartpole.cpp.s
+.PHONY : src/environment/scalable_cartpole.s
+
+# target to generate assembly for a file
+src/environment/scalable_cartpole.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartpole_lib.dir/build.make CMakeFiles/cartpole_lib.dir/src/environment/scalable_cartpole.cpp.s
+.PHONY : src/environment/scalable_cartpole.cpp.s
 
 src/neural_network/activation_functions.o: src/neural_network/activation_functions.cpp.o
 .PHONY : src/neural_network/activation_functions.o
@@ -276,6 +352,54 @@ src/neural_network/matrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_lib.dir/build.make CMakeFiles/matrix_lib.dir/src/neural_network/matrix.cpp.s
 .PHONY : src/neural_network/matrix.cpp.s
 
+src/neural_network/neural_network.o: src/neural_network/neural_network.cpp.o
+.PHONY : src/neural_network/neural_network.o
+
+# target to build an object file
+src/neural_network/neural_network.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_network_lib.dir/build.make CMakeFiles/neural_network_lib.dir/src/neural_network/neural_network.cpp.o
+.PHONY : src/neural_network/neural_network.cpp.o
+
+src/neural_network/neural_network.i: src/neural_network/neural_network.cpp.i
+.PHONY : src/neural_network/neural_network.i
+
+# target to preprocess a source file
+src/neural_network/neural_network.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_network_lib.dir/build.make CMakeFiles/neural_network_lib.dir/src/neural_network/neural_network.cpp.i
+.PHONY : src/neural_network/neural_network.cpp.i
+
+src/neural_network/neural_network.s: src/neural_network/neural_network.cpp.s
+.PHONY : src/neural_network/neural_network.s
+
+# target to generate assembly for a file
+src/neural_network/neural_network.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_network_lib.dir/build.make CMakeFiles/neural_network_lib.dir/src/neural_network/neural_network.cpp.s
+.PHONY : src/neural_network/neural_network.cpp.s
+
+tests/environment/test_cartpole.o: tests/environment/test_cartpole.cpp.o
+.PHONY : tests/environment/test_cartpole.o
+
+# target to build an object file
+tests/environment/test_cartpole.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cartpole.dir/build.make CMakeFiles/test_cartpole.dir/tests/environment/test_cartpole.cpp.o
+.PHONY : tests/environment/test_cartpole.cpp.o
+
+tests/environment/test_cartpole.i: tests/environment/test_cartpole.cpp.i
+.PHONY : tests/environment/test_cartpole.i
+
+# target to preprocess a source file
+tests/environment/test_cartpole.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cartpole.dir/build.make CMakeFiles/test_cartpole.dir/tests/environment/test_cartpole.cpp.i
+.PHONY : tests/environment/test_cartpole.cpp.i
+
+tests/environment/test_cartpole.s: tests/environment/test_cartpole.cpp.s
+.PHONY : tests/environment/test_cartpole.s
+
+# target to generate assembly for a file
+tests/environment/test_cartpole.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cartpole.dir/build.make CMakeFiles/test_cartpole.dir/tests/environment/test_cartpole.cpp.s
+.PHONY : tests/environment/test_cartpole.cpp.s
+
 tests/neural_network/test_activation_functions.o: tests/neural_network/test_activation_functions.cpp.o
 .PHONY : tests/neural_network/test_activation_functions.o
 
@@ -348,6 +472,30 @@ tests/neural_network/test_matrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_matrix.dir/build.make CMakeFiles/test_matrix.dir/tests/neural_network/test_matrix.cpp.s
 .PHONY : tests/neural_network/test_matrix.cpp.s
 
+tests/neural_network/test_neural_network.o: tests/neural_network/test_neural_network.cpp.o
+.PHONY : tests/neural_network/test_neural_network.o
+
+# target to build an object file
+tests/neural_network/test_neural_network.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_neural_network.dir/build.make CMakeFiles/test_neural_network.dir/tests/neural_network/test_neural_network.cpp.o
+.PHONY : tests/neural_network/test_neural_network.cpp.o
+
+tests/neural_network/test_neural_network.i: tests/neural_network/test_neural_network.cpp.i
+.PHONY : tests/neural_network/test_neural_network.i
+
+# target to preprocess a source file
+tests/neural_network/test_neural_network.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_neural_network.dir/build.make CMakeFiles/test_neural_network.dir/tests/neural_network/test_neural_network.cpp.i
+.PHONY : tests/neural_network/test_neural_network.cpp.i
+
+tests/neural_network/test_neural_network.s: tests/neural_network/test_neural_network.cpp.s
+.PHONY : tests/neural_network/test_neural_network.s
+
+# target to generate assembly for a file
+tests/neural_network/test_neural_network.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_neural_network.dir/build.make CMakeFiles/test_neural_network.dir/tests/neural_network/test_neural_network.cpp.s
+.PHONY : tests/neural_network/test_neural_network.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -358,11 +506,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... activation_lib"
+	@echo "... cartpole_lib"
 	@echo "... dense_layer_lib"
 	@echo "... matrix_lib"
+	@echo "... neural_network_lib"
 	@echo "... test_activation_functions"
+	@echo "... test_cartpole"
 	@echo "... test_dense_layer"
 	@echo "... test_matrix"
+	@echo "... test_neural_network"
+	@echo "... src/environment/scalable_cartpole.o"
+	@echo "... src/environment/scalable_cartpole.i"
+	@echo "... src/environment/scalable_cartpole.s"
 	@echo "... src/neural_network/activation_functions.o"
 	@echo "... src/neural_network/activation_functions.i"
 	@echo "... src/neural_network/activation_functions.s"
@@ -372,6 +527,12 @@ help:
 	@echo "... src/neural_network/matrix.o"
 	@echo "... src/neural_network/matrix.i"
 	@echo "... src/neural_network/matrix.s"
+	@echo "... src/neural_network/neural_network.o"
+	@echo "... src/neural_network/neural_network.i"
+	@echo "... src/neural_network/neural_network.s"
+	@echo "... tests/environment/test_cartpole.o"
+	@echo "... tests/environment/test_cartpole.i"
+	@echo "... tests/environment/test_cartpole.s"
 	@echo "... tests/neural_network/test_activation_functions.o"
 	@echo "... tests/neural_network/test_activation_functions.i"
 	@echo "... tests/neural_network/test_activation_functions.s"
@@ -381,6 +542,9 @@ help:
 	@echo "... tests/neural_network/test_matrix.o"
 	@echo "... tests/neural_network/test_matrix.i"
 	@echo "... tests/neural_network/test_matrix.s"
+	@echo "... tests/neural_network/test_neural_network.o"
+	@echo "... tests/neural_network/test_neural_network.i"
+	@echo "... tests/neural_network/test_neural_network.s"
 .PHONY : help
 
 

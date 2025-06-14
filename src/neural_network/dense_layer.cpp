@@ -152,3 +152,18 @@ void DenseLayer::clip_gradients(double max_norm) {
         biases = biases * scale;
     }
 }
+
+// Setters
+void DenseLayer::set_weights(const Matrix& w) {
+    if (w.get_rows() != weights.get_rows() || w.get_cols() != weights.get_cols()) {
+        throw std::invalid_argument("Weight dimensions must match layer dimensions");
+    }
+    weights = w;
+}
+
+void DenseLayer::set_biases(const Matrix& b) {
+    if (b.get_rows() != biases.get_rows() || b.get_cols() != 1) {
+        throw std::invalid_argument("Bias dimensions must match layer output size");
+    }
+    biases = b;
+}

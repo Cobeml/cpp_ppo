@@ -192,6 +192,19 @@ cartpole_lib/fast:
 .PHONY : cartpole_lib/fast
 
 #=============================================================================
+# Target rules for targets named training_monitor_lib
+
+# Build rule for target.
+training_monitor_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 training_monitor_lib
+.PHONY : training_monitor_lib
+
+# fast build rule for target.
+training_monitor_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/training_monitor_lib.dir/build.make CMakeFiles/training_monitor_lib.dir/build
+.PHONY : training_monitor_lib/fast
+
+#=============================================================================
 # Target rules for targets named test_matrix
 
 # Build rule for target.
@@ -255,6 +268,56 @@ test_cartpole: cmake_check_build_system
 test_cartpole/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cartpole.dir/build.make CMakeFiles/test_cartpole.dir/build
 .PHONY : test_cartpole/fast
+
+#=============================================================================
+# Target rules for targets named test_training_monitor
+
+# Build rule for target.
+test_training_monitor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_training_monitor
+.PHONY : test_training_monitor
+
+# fast build rule for target.
+test_training_monitor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_training_monitor.dir/build.make CMakeFiles/test_training_monitor.dir/build
+.PHONY : test_training_monitor/fast
+
+#=============================================================================
+# Target rules for targets named visualization_demo
+
+# Build rule for target.
+visualization_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 visualization_demo
+.PHONY : visualization_demo
+
+# fast build rule for target.
+visualization_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/build
+.PHONY : visualization_demo/fast
+
+examples/visualization_demo.o: examples/visualization_demo.cpp.o
+.PHONY : examples/visualization_demo.o
+
+# target to build an object file
+examples/visualization_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/examples/visualization_demo.cpp.o
+.PHONY : examples/visualization_demo.cpp.o
+
+examples/visualization_demo.i: examples/visualization_demo.cpp.i
+.PHONY : examples/visualization_demo.i
+
+# target to preprocess a source file
+examples/visualization_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/examples/visualization_demo.cpp.i
+.PHONY : examples/visualization_demo.cpp.i
+
+examples/visualization_demo.s: examples/visualization_demo.cpp.s
+.PHONY : examples/visualization_demo.s
+
+# target to generate assembly for a file
+examples/visualization_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/examples/visualization_demo.cpp.s
+.PHONY : examples/visualization_demo.cpp.s
 
 src/environment/scalable_cartpole.o: src/environment/scalable_cartpole.cpp.o
 .PHONY : src/environment/scalable_cartpole.o
@@ -376,6 +439,30 @@ src/neural_network/neural_network.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_network_lib.dir/build.make CMakeFiles/neural_network_lib.dir/src/neural_network/neural_network.cpp.s
 .PHONY : src/neural_network/neural_network.cpp.s
 
+src/utils/training_monitor.o: src/utils/training_monitor.cpp.o
+.PHONY : src/utils/training_monitor.o
+
+# target to build an object file
+src/utils/training_monitor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/training_monitor_lib.dir/build.make CMakeFiles/training_monitor_lib.dir/src/utils/training_monitor.cpp.o
+.PHONY : src/utils/training_monitor.cpp.o
+
+src/utils/training_monitor.i: src/utils/training_monitor.cpp.i
+.PHONY : src/utils/training_monitor.i
+
+# target to preprocess a source file
+src/utils/training_monitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/training_monitor_lib.dir/build.make CMakeFiles/training_monitor_lib.dir/src/utils/training_monitor.cpp.i
+.PHONY : src/utils/training_monitor.cpp.i
+
+src/utils/training_monitor.s: src/utils/training_monitor.cpp.s
+.PHONY : src/utils/training_monitor.s
+
+# target to generate assembly for a file
+src/utils/training_monitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/training_monitor_lib.dir/build.make CMakeFiles/training_monitor_lib.dir/src/utils/training_monitor.cpp.s
+.PHONY : src/utils/training_monitor.cpp.s
+
 tests/environment/test_cartpole.o: tests/environment/test_cartpole.cpp.o
 .PHONY : tests/environment/test_cartpole.o
 
@@ -496,6 +583,30 @@ tests/neural_network/test_neural_network.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_neural_network.dir/build.make CMakeFiles/test_neural_network.dir/tests/neural_network/test_neural_network.cpp.s
 .PHONY : tests/neural_network/test_neural_network.cpp.s
 
+tests/utils/test_training_monitor.o: tests/utils/test_training_monitor.cpp.o
+.PHONY : tests/utils/test_training_monitor.o
+
+# target to build an object file
+tests/utils/test_training_monitor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_training_monitor.dir/build.make CMakeFiles/test_training_monitor.dir/tests/utils/test_training_monitor.cpp.o
+.PHONY : tests/utils/test_training_monitor.cpp.o
+
+tests/utils/test_training_monitor.i: tests/utils/test_training_monitor.cpp.i
+.PHONY : tests/utils/test_training_monitor.i
+
+# target to preprocess a source file
+tests/utils/test_training_monitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_training_monitor.dir/build.make CMakeFiles/test_training_monitor.dir/tests/utils/test_training_monitor.cpp.i
+.PHONY : tests/utils/test_training_monitor.cpp.i
+
+tests/utils/test_training_monitor.s: tests/utils/test_training_monitor.cpp.s
+.PHONY : tests/utils/test_training_monitor.s
+
+# target to generate assembly for a file
+tests/utils/test_training_monitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_training_monitor.dir/build.make CMakeFiles/test_training_monitor.dir/tests/utils/test_training_monitor.cpp.s
+.PHONY : tests/utils/test_training_monitor.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -515,6 +626,12 @@ help:
 	@echo "... test_dense_layer"
 	@echo "... test_matrix"
 	@echo "... test_neural_network"
+	@echo "... test_training_monitor"
+	@echo "... training_monitor_lib"
+	@echo "... visualization_demo"
+	@echo "... examples/visualization_demo.o"
+	@echo "... examples/visualization_demo.i"
+	@echo "... examples/visualization_demo.s"
 	@echo "... src/environment/scalable_cartpole.o"
 	@echo "... src/environment/scalable_cartpole.i"
 	@echo "... src/environment/scalable_cartpole.s"
@@ -530,6 +647,9 @@ help:
 	@echo "... src/neural_network/neural_network.o"
 	@echo "... src/neural_network/neural_network.i"
 	@echo "... src/neural_network/neural_network.s"
+	@echo "... src/utils/training_monitor.o"
+	@echo "... src/utils/training_monitor.i"
+	@echo "... src/utils/training_monitor.s"
 	@echo "... tests/environment/test_cartpole.o"
 	@echo "... tests/environment/test_cartpole.i"
 	@echo "... tests/environment/test_cartpole.s"
@@ -545,6 +665,9 @@ help:
 	@echo "... tests/neural_network/test_neural_network.o"
 	@echo "... tests/neural_network/test_neural_network.i"
 	@echo "... tests/neural_network/test_neural_network.s"
+	@echo "... tests/utils/test_training_monitor.o"
+	@echo "... tests/utils/test_training_monitor.i"
+	@echo "... tests/utils/test_training_monitor.s"
 .PHONY : help
 
 

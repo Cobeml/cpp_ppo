@@ -36,6 +36,11 @@ add_library(cartpole_lib STATIC
     src/environment/scalable_cartpole.cpp
 )
 
+# Training monitor library
+add_library(training_monitor_lib STATIC
+    src/utils/training_monitor.cpp
+)
+
 # Link math library
 target_link_libraries(matrix_lib m)
 target_link_libraries(cartpole_lib m)
@@ -66,4 +71,13 @@ add_test(NAME NeuralNetworkTest COMMAND test_neural_network)
 # CartPole Test
 add_executable(test_cartpole tests/environment/test_cartpole.cpp)
 target_link_libraries(test_cartpole cartpole_lib)
-add_test(NAME CartPoleTest COMMAND test_cartpole) 
+add_test(NAME CartPoleTest COMMAND test_cartpole)
+
+# Training monitor tests
+add_executable(test_training_monitor tests/utils/test_training_monitor.cpp)
+target_link_libraries(test_training_monitor training_monitor_lib)
+add_test(NAME TrainingMonitorTest COMMAND test_training_monitor)
+
+# Example programs
+add_executable(visualization_demo examples/visualization_demo.cpp)
+target_link_libraries(visualization_demo training_monitor_lib) 

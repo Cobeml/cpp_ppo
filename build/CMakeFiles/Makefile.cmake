@@ -54,9 +54,12 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/dense_layer_lib.dir/DependInfo.cmake"
   "CMakeFiles/neural_network_lib.dir/DependInfo.cmake"
   "CMakeFiles/cartpole_lib.dir/DependInfo.cmake"
+  "CMakeFiles/training_monitor_lib.dir/DependInfo.cmake"
   "CMakeFiles/test_matrix.dir/DependInfo.cmake"
   "CMakeFiles/test_activation_functions.dir/DependInfo.cmake"
   "CMakeFiles/test_dense_layer.dir/DependInfo.cmake"
   "CMakeFiles/test_neural_network.dir/DependInfo.cmake"
   "CMakeFiles/test_cartpole.dir/DependInfo.cmake"
+  "CMakeFiles/test_training_monitor.dir/DependInfo.cmake"
+  "CMakeFiles/visualization_demo.dir/DependInfo.cmake"
   )

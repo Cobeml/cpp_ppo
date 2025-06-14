@@ -1,0 +1,146 @@
+Start testing: Jun 14 21:23 UTC
+----------------------------------------------------------
+1/6 Testing: MatrixTest
+1/6 Test: MatrixTest
+Command: "/workspace/build/test_matrix"
+Directory: /workspace/build
+"MatrixTest" start time: Jun 14 21:23 UTC
+Output:
+----------------------------------------------------------
+Running Matrix Tests...
+======================
+Test: Matrix construction... PASSED
+Test: Matrix operations... PASSED
+Test: Matrix transpose... PASSED
+Test: Matrix initialization... PASSED
+
+All tests PASSED! ✓
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MatrixTest" end time: Jun 14 21:23 UTC
+"MatrixTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: ActivationFunctionsTest
+2/6 Test: ActivationFunctionsTest
+Command: "/workspace/build/test_activation_functions"
+Directory: /workspace/build
+"ActivationFunctionsTest" start time: Jun 14 21:23 UTC
+Output:
+----------------------------------------------------------
+Running Activation Function Tests...
+===================================
+Test: ReLU activation... PASSED
+Test: Tanh activation... PASSED
+Test: Sigmoid activation... PASSED
+Test: Linear activation... PASSED
+Test: Softmax activation... PASSED
+Test: Activation cloning... PASSED
+
+All tests PASSED! ✓
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ActivationFunctionsTest" end time: Jun 14 21:23 UTC
+"ActivationFunctionsTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: DenseLayerTest
+3/6 Test: DenseLayerTest
+Command: "/workspace/build/test_dense_layer"
+Directory: /workspace/build
+"DenseLayerTest" start time: Jun 14 21:23 UTC
+Output:
+----------------------------------------------------------
+Running Dense Layer Tests...
+============================
+Test 1: Construction and initialization... PASSED
+Test 2: Forward pass with known values... PASSED
+Test 3: Different activation functions... PASSED
+Test 4: Backward pass and gradient computation... PASSED
+Test 5: Numerical gradient checking... PASSED
+Test 6: Weight updates with learning... PASSED
+Test 7: Batch processing... PASSED
+Test 8: Copy constructor and assignment... Mismatch at (0, 0): 0.633032 vs 0.630275
+PASSED
+Test 9: Weight initialization methods... PASSED
+Test 10: Gradient clipping... PASSED
+Test 11: Edge cases... PASSED
+Test 12: Performance test... Average forward pass time: 126.722 microseconds... PASSED
+
+All tests PASSED! ✓
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"DenseLayerTest" end time: Jun 14 21:23 UTC
+"DenseLayerTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: NeuralNetworkTest
+4/6 Test: NeuralNetworkTest
+Command: "/workspace/build/test_neural_network"
+Directory: /workspace/build
+"NeuralNetworkTest" start time: Jun 14 21:23 UTC
+Output:
+----------------------------------------------------------
+Running Neural Network Tests...
+===============================
+Test 1: Construction and layer addition... PASSED
+Test 2: Forward pass through network... PASSED
+Test 3: Batch forward pass... PASSED
+Test 4: Loss computation... PASSED
+Test 5: Backward pass and weight updates... PASSED
+Test 6: XOR problem learning... PASSED
+Test 7: Copy constructor and assignment... PASSED
+Test 8: Weight initialization methods... PASSED
+Test 9: Gradient clipping... PASSED
+Test 10: Architecture printing... PASSED
+Test 11: Save and load weights... PASSED
+Test 12: Performance test... Average forward pass time: 176.93 microseconds... PASSED
+Test 13: Edge cases... PASSED
+
+All tests PASSED! ✓
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"NeuralNetworkTest" end time: Jun 14 21:23 UTC
+"NeuralNetworkTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: CartPoleTest
+5/6 Test: CartPoleTest
+Command: "/workspace/build/test_cartpole"
+Directory: /workspace/build
+"CartPoleTest" start time: Jun 14 21:23 UTC
+Output:
+----------------------------------------------------------
+Running CartPole Environment Tests...
+=====================================
+Test 1: Construction and initialization... PASSED
+Test 2: Reset functionality... PASSED
+Test 3: Basic physics - stationary pole... PASSED
+Test 4: Action effects... PASSED
+Test 5: Termination conditions... PASSED
+Test 6: Difficulty levels... PASSED
+Test 7: Custom parameters... PASSED
+Test 8: Reward computation... PASSED
+Test 9: State normalization... PASSED
+Test 10: Reproducibility with seed... PASSED
+Test 11: Long episode stability... PASSED
+Test 12: Performance test... Average time per step: 0.0308183 microseconds... PASSED
+Test 13: Visualization functions... PASSED
+
+All tests PASSED! ✓
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CartPoleTest" end time: Jun 14 21:23 UTC
+"CartPoleTest" time elapsed: 00:00:00
+----------------------------------------------------------
+

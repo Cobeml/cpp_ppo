@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdense_layer_lib.a CMakeFiles/dense_layer_lib.dir/src/neural_network/dense_layer.cpp.o
+/usr/bin/ranlib libdense_layer_lib.a

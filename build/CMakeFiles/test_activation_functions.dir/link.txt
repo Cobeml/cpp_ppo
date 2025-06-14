@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -O3 -Xlinker --dependency-file=CMakeFiles/test_activation_functions.dir/link.d CMakeFiles/test_activation_functions.dir/tests/neural_network/test_activation_functions.cpp.o -o test_activation_functions  libactivation_lib.a libmatrix_lib.a -lm

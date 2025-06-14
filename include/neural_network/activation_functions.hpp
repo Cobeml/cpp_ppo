@@ -3,50 +3,54 @@
 #include <memory>
 #include <cmath>
 #include <algorithm>
+#include <vector>
+#include "matrix.hpp"
 
+// Base class for activation functions
 class ActivationFunction {
 public:
     virtual ~ActivationFunction() = default;
-    virtual double forward(double x) const = 0;
-    virtual double backward(double x) const = 0; // derivative
+    virtual Matrix forward(const Matrix& input) const = 0;
+    virtual Matrix backward(const Matrix& grad_output, const Matrix& input) const = 0;
     virtual std::unique_ptr<ActivationFunction> clone() const = 0;
 };
 
+// ReLU activation function
 class ReLU : public ActivationFunction {
 public:
-    double forward(double x) const override;
-    double backward(double x) const override;
+    Matrix forward(const Matrix& input) const override;
+    Matrix backward(const Matrix& grad_output, const Matrix& input) const override;
     std::unique_ptr<ActivationFunction> clone() const override;
 };
 
-class Tanh : public ActivationFunction {
+// Sigmoid activation function
+class SigmoidActivation : public ActivationFunction {
 public:
-    double forward(double x) const override;
-    double backward(double x) const override;
+    Matrix forward(const Matrix& input) const override;
+    Matrix backward(const Matrix& grad_output, const Matrix& input) const override;
     std::unique_ptr<ActivationFunction> clone() const override;
 };
 
-class Sigmoid : public ActivationFunction {
+// Tanh activation function
+class TanhActivation : public ActivationFunction {
 public:
-    double forward(double x) const override;
-    double backward(double x) const override;
+    Matrix forward(const Matrix& input) const override;
+    Matrix backward(const Matrix& grad_output, const Matrix& input) const override;
     std::unique_ptr<ActivationFunction> clone() const override;
 };
 
-class Linear : public ActivationFunction {
+// Linear (identity) activation function
+class LinearActivation : public ActivationFunction {
 public:
-    double forward(double x) const override;
-    double backward(double x) const override;
+    Matrix forward(const Matrix& input) const override;
+    Matrix backward(const Matrix& grad_output, const Matrix& input) const override;
     std::unique_ptr<ActivationFunction> clone() const override;
 };
 
-class Softmax : public ActivationFunction {
+// Softmax activation function
+class SoftmaxActivation : public ActivationFunction {
 public:
-    double forward(double x) const override;
-    double backward(double x) const override;
+    Matrix forward(const Matrix& input) const override;
+    Matrix backward(const Matrix& grad_output, const Matrix& input) const override;
     std::unique_ptr<ActivationFunction> clone() const override;
-    
-    // Special methods for softmax (operates on vectors)
-    static std::vector<double> softmax_vector(const std::vector<double>& input);
-    static std::vector<double> softmax_derivative(const std::vector<double>& softmax_output, size_t index);
 }; 

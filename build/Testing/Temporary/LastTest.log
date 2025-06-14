@@ -1,0 +1,99 @@
+Start testing: Jun 14 20:32 UTC
+----------------------------------------------------------
+1/3 Testing: MatrixTest
+1/3 Test: MatrixTest
+Command: "/workspace/build/test_matrix"
+Directory: /workspace/build
+"MatrixTest" start time: Jun 14 20:32 UTC
+Output:
+----------------------------------------------------------
+Running Matrix tests...
+=======================
+Testing matrix construction...
+✓ Construction tests passed!
+Testing matrix operations...
+✓ Operation tests passed!
+Testing matrix initialization...
+✓ Initialization tests passed!
+=======================
+✓ All Matrix tests passed!
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MatrixTest" end time: Jun 14 20:32 UTC
+"MatrixTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: ActivationFunctionsTest
+2/3 Test: ActivationFunctionsTest
+Command: "/workspace/build/test_activation_functions"
+Directory: /workspace/build
+"ActivationFunctionsTest" start time: Jun 14 20:32 UTC
+Output:
+----------------------------------------------------------
+Running Activation Function tests...
+===================================
+Testing ReLU activation...
+✓ ReLU tests passed!
+Testing Sigmoid activation...
+✓ Sigmoid tests passed!
+Testing Tanh activation...
+✓ Tanh tests passed!
+Testing Linear activation...
+✓ Linear tests passed!
+Testing Softmax activation...
+✓ Softmax tests passed!
+===================================
+✓ All Activation Function tests passed!
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ActivationFunctionsTest" end time: Jun 14 20:32 UTC
+"ActivationFunctionsTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: DenseLayerTest
+3/3 Test: DenseLayerTest
+Command: "/workspace/build/test_dense_layer"
+Directory: /workspace/build
+"DenseLayerTest" start time: Jun 14 20:32 UTC
+Output:
+----------------------------------------------------------
+Running Dense Layer tests...
+=============================
+Testing Dense Layer construction...
+✓ Construction tests passed!
+Testing Dense Layer forward pass...
+✓ Forward pass tests passed!
+Testing Dense Layer backward pass...
+✓ Backward pass tests passed!
+Testing numerical gradient checking...
+✓ Gradient checking tests passed!
+Testing weight updates...
+✓ Weight update tests passed!
+Testing different activation functions...
+✓ Activation function tests passed!
+Testing weight initialization methods...
+✓ Weight initialization tests passed!
+Testing edge cases...
+✓ Edge case tests passed!
+Testing gradient clipping...
+✓ Gradient clipping tests passed!
+Testing copy operations...
+✓ Copy operation tests passed!
+Testing performance...
+  Average forward pass time: 135.633 μs
+✓ Performance tests passed!
+=============================
+✓ All Dense Layer tests passed!
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"DenseLayerTest" end time: Jun 14 20:32 UTC
+"DenseLayerTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 14 20:32 UTC

@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -O3 -Xlinker --dependency-file=CMakeFiles/test_dense_layer.dir/link.d CMakeFiles/test_dense_layer.dir/tests/neural_network/test_dense_layer.cpp.o -o test_dense_layer  libdense_layer_lib.a libactivation_lib.a libmatrix_lib.a -lm

@@ -55,6 +55,9 @@ public:
     // State access
     const std::array<double, 4>& get_state() const { return state; }
     
+    // For testing purposes - set state directly
+    void set_state(const std::array<double, 4>& new_state) { state = new_state; }
+    
     // Visualization (optional)
     void render() const; // Simple console output
     void print_state() const;

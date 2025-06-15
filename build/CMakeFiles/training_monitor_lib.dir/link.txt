@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtraining_monitor_lib.a CMakeFiles/training_monitor_lib.dir/src/utils/training_monitor.cpp.o
+/usr/bin/ranlib libtraining_monitor_lib.a

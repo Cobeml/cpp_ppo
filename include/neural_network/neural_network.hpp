@@ -5,6 +5,7 @@
 #include "activation_functions.hpp"
 #include <vector>
 #include <memory>
+#include <string>
 
 class NeuralNetwork {
 protected:
@@ -40,6 +41,7 @@ public:
     // Weight management
     void initialize_all_weights_xavier();
     void initialize_all_weights_he();
+    void initialize_all_weights_random(double min = -1.0, double max = 1.0);
     void clip_all_gradients(double max_norm);
     
     // Save/Load (placeholder for future implementation)

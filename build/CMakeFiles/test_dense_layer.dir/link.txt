@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -O3 -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_dense_layer.dir/tests/neural_network/test_dense_layer.cpp.o -o test_dense_layer  libdense_layer_lib.a libmatrix_lib.a libactivation_lib.a -lm

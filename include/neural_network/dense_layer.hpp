@@ -38,6 +38,10 @@ public:
     size_t get_input_size() const { return weights.get_cols(); }
     size_t get_output_size() const { return weights.get_rows(); }
     
+    // Setters (for loading weights)
+    void set_weights(const Matrix& w);
+    void set_biases(const Matrix& b);
+    
     // Gradient clipping
     void clip_gradients(double max_norm);
 }; 

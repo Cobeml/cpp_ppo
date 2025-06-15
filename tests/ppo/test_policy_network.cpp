@@ -1,10 +1,8 @@
-#include "ppo/policy_network.hpp"
-#include "neural_network/matrix.hpp"
+#include "../../include/ppo/policy_network.hpp"
+#include "../../include/neural_network/matrix.hpp"
 #include <iostream>
 #include <cassert>
 #include <cmath>
-#include <numeric>
-#include <algorithm>
 #include <map>
 
 void test_policy_network_construction() {

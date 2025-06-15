@@ -1,6 +1,6 @@
-#include "ppo/ppo_agent.hpp"
-#include "environment/scalable_cartpole.hpp"
-#include "utils/training_monitor.hpp"
+#include "../include/ppo/ppo_agent.hpp"
+#include "../include/environment/scalable_cartpole.hpp"
+#include "../include/utils/training_monitor.hpp"
 #include <iostream>
 #include <vector>
 #include <iomanip>

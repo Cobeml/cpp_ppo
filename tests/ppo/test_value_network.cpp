@@ -1,10 +1,9 @@
-#include "ppo/value_network.hpp"
-#include "neural_network/matrix.hpp"
+#include "../../include/ppo/value_network.hpp"
+#include "../../include/neural_network/matrix.hpp"
 #include <iostream>
 #include <cassert>
 #include <cmath>
 #include <vector>
-#include <numeric>
 
 void test_value_network_construction() {
     std::cout << "Testing value network construction..." << std::endl;

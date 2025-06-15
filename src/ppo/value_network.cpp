@@ -1,8 +1,5 @@
-#include "ppo/value_network.hpp"
-#include "neural_network/activation_functions.hpp"
-#include <cmath>
-#include <stdexcept>
-#include <numeric>
+#include "../../include/ppo/value_network.hpp"
+#include "../../include/neural_network/activation_functions.hpp"
 
 ValueNetwork::ValueNetwork(size_t state_size, double lr) 
     : NeuralNetwork(lr) {

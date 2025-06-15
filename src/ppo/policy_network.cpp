@@ -1,9 +1,5 @@
-#include "ppo/policy_network.hpp"
-#include "neural_network/activation_functions.hpp"
-#include <cmath>
-#include <algorithm>
-#include <numeric>
-#include <stdexcept>
+#include "../../include/ppo/policy_network.hpp"
+#include "../../include/neural_network/activation_functions.hpp"
 
 PolicyNetwork::PolicyNetwork(size_t state_size, size_t action_size, double lr) 
     : NeuralNetwork(lr), action_space_size(action_size) {

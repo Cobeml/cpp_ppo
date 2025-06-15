@@ -1,11 +1,9 @@
-#include "ppo/ppo_agent.hpp"
-#include "neural_network/matrix.hpp"
+#include "../../include/ppo/ppo_agent.hpp"
+#include "../../include/neural_network/matrix.hpp"
 #include <iostream>
 #include <cassert>
 #include <cmath>
-#include <vector>
 #include <map>
-#include <fstream>
 #include <cstdio>
 
 void test_ppo_agent_construction() {

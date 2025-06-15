@@ -1,1 +1,1 @@
-/usr/bin/c++  -Wall -Wextra -O3 -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/visualization_demo.dir/examples/visualization_demo.cpp.o -o visualization_demo  libtraining_monitor_lib.a
+/usr/bin/c++  -Wall -Wextra -O3 -Xlinker --dependency-file=CMakeFiles/visualization_demo.dir/link.d CMakeFiles/visualization_demo.dir/examples/visualization_demo.cpp.o -o visualization_demo  libtraining_monitor_lib.a

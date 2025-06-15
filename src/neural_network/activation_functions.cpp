@@ -1,6 +1,8 @@
 #include "../../include/neural_network/activation_functions.hpp"
 #include <vector>
 #include <stdexcept>
+#include <cmath>
+#include <algorithm>
 
 // ReLU Implementation
 double ReLU::forward(double x) const {

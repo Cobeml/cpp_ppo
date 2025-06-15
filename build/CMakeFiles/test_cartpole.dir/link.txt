@@ -1,1 +1,1 @@
-/usr/bin/c++  -Wall -Wextra -O3 -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_cartpole.dir/tests/environment/test_cartpole.cpp.o -o test_cartpole  libcartpole_lib.a -lm
+/usr/bin/c++  -Wall -Wextra -O3 -Xlinker --dependency-file=CMakeFiles/test_cartpole.dir/link.d CMakeFiles/test_cartpole.dir/tests/environment/test_cartpole.cpp.o -o test_cartpole  libcartpole_lib.a -lm

@@ -1,4 +1,5 @@
 #include "../../include/neural_network/dense_layer.hpp"
+#include <stdexcept>
 
 // Constructor
 DenseLayer::DenseLayer(size_t input_size, size_t output_size, 

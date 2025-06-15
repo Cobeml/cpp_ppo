@@ -41,6 +41,17 @@ add_library(training_monitor_lib STATIC
     src/utils/training_monitor.cpp
 )
 
+# PPO Libraries
+add_library(ppo_buffer_lib STATIC
+    src/ppo/ppo_buffer.cpp
+)
+target_link_libraries(ppo_buffer_lib matrix_lib)
+
+add_library(policy_network_lib STATIC
+    src/ppo/policy_network.cpp
+)
+target_link_libraries(policy_network_lib neural_network_lib dense_layer_lib matrix_lib activation_lib)
+
 # Link math library
 target_link_libraries(matrix_lib m)
 target_link_libraries(cartpole_lib m)
@@ -77,6 +88,16 @@ add_test(NAME CartPoleTest COMMAND test_cartpole)
 add_executable(test_training_monitor tests/utils/test_training_monitor.cpp)
 target_link_libraries(test_training_monitor training_monitor_lib)
 add_test(NAME TrainingMonitorTest COMMAND test_training_monitor)
+
+# PPO Buffer Test
+add_executable(test_ppo_buffer tests/ppo/test_ppo_buffer.cpp)
+target_link_libraries(test_ppo_buffer ppo_buffer_lib matrix_lib)
+add_test(NAME PPOBufferTest COMMAND test_ppo_buffer)
+
+# Policy Network Test
+add_executable(test_policy_network tests/ppo/test_policy_network.cpp)
+target_link_libraries(test_policy_network policy_network_lib neural_network_lib dense_layer_lib matrix_lib activation_lib)
+add_test(NAME PolicyNetworkTest COMMAND test_policy_network)
 
 # Example programs
 add_executable(visualization_demo examples/visualization_demo.cpp)

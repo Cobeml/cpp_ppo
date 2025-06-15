@@ -1,6 +1,8 @@
 #include "../../include/neural_network/matrix.hpp"
 #include <cmath>
 #include <iomanip>
+#include <random>
+#include <iostream>
 
 // Constructors
 Matrix::Matrix(size_t r, size_t c, double init_value) : rows(r), cols(c) {

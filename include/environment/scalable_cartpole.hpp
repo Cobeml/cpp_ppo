@@ -63,8 +63,8 @@ public:
     void seed(unsigned int seed) { random_generator.seed(seed); }
     
     // Static constants
-    static constexpr size_t STATE_SIZE = 4;
-    static constexpr size_t ACTION_SIZE = 2; // 0=left, 1=right
+    static const size_t STATE_SIZE = 4;
+    static const size_t ACTION_SIZE = 2; // 0=left, 1=right
     
 private:
     // Physics simulation

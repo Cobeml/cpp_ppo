@@ -1,8 +1,6 @@
 #pragma once
 
 #include <memory>
-#include <cmath>
-#include <algorithm>
 
 class ActivationFunction {
 public:

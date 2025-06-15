@@ -1,8 +1,7 @@
-#include "neural_network/neural_network.hpp"
+#include "../../include/neural_network/neural_network.hpp"
 #include <iostream>
 #include <fstream>
 #include <stdexcept>
-#include <cmath>
 
 // Constructor
 NeuralNetwork::NeuralNetwork(double lr) : learning_rate(lr) {

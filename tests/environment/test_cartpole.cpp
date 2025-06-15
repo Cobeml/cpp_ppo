@@ -1,13 +1,11 @@
 #include <iostream>
 #include <cmath>
 #include <cassert>
-#include <iomanip>
 #include <vector>
 #include <chrono>
-#include <algorithm>
 #include <sstream>
 #include <tuple>
-#include "environment/scalable_cartpole.hpp"
+#include "../../include/environment/scalable_cartpole.hpp"
 
 // Test tolerance for floating point comparisons
 const double TOLERANCE = 1e-5;

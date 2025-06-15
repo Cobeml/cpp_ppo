@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test_training_monitor.dir/link.d"
   "CMakeFiles/test_training_monitor.dir/tests/utils/test_training_monitor.cpp.o"
   "CMakeFiles/test_training_monitor.dir/tests/utils/test_training_monitor.cpp.o.d"
   "test_training_monitor"

@@ -92,7 +92,7 @@ namespace Visualization {
     // ASCII art generators
     std::string create_sparkline(const std::vector<double>& data, size_t width);
     std::string create_histogram(const std::vector<double>& data, size_t bins, size_t width);
-    std::string create_heatmap(const std::vector<std::vector<double>>& data, 
+    std::string create_heatmap(const std::vector<std::vector<double> >& data, 
                               size_t width, size_t height);
     
     // Terminal colors (ANSI escape codes)

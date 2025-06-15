@@ -4,7 +4,7 @@
 #include <chrono>
 #include <cmath>
 #include <iomanip>
-#include "utils/training_monitor.hpp"
+#include "../include/utils/training_monitor.hpp"
 
 // Simulate a training run with improving performance
 void simulate_training() {

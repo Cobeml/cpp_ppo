@@ -6,7 +6,7 @@
 #include <sstream>
 #include <fstream>
 #include <cstdio>
-#include "utils/training_monitor.hpp"
+#include "../../include/utils/training_monitor.hpp"
 
 // Test basic construction and initialization
 void test_construction() {

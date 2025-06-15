@@ -1,6 +1,0 @@
-MatrixTest 4 0.000422589
-ActivationFunctionsTest 4 0.000360112
-DenseLayerTest 4 0.0323321
-NeuralNetworkTest 3 0.0106696
-CartPoleTest 2 0.000889262
----

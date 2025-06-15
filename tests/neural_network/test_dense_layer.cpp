@@ -2,11 +2,10 @@
 #include <cmath>
 #include <memory>
 #include <cassert>
-#include <iomanip>
 #include <chrono>
-#include "neural_network/dense_layer.hpp"
-#include "neural_network/matrix.hpp"
-#include "neural_network/activation_functions.hpp"
+#include "../../include/neural_network/dense_layer.hpp"
+#include "../../include/neural_network/matrix.hpp"
+#include "../../include/neural_network/activation_functions.hpp"
 
 // Test tolerance for floating point comparisons
 const double TOLERANCE = 1e-5;

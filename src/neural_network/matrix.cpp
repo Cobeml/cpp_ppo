@@ -1,7 +1,5 @@
-#include "neural_network/matrix.hpp"
+#include "../../include/neural_network/matrix.hpp"
 #include <cmath>
-#include <algorithm>
-#include <numeric>
 #include <iomanip>
 
 // Constructors

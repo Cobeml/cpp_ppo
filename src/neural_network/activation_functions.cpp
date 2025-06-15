@@ -1,6 +1,5 @@
-#include "neural_network/activation_functions.hpp"
+#include "../../include/neural_network/activation_functions.hpp"
 #include <vector>
-#include <numeric>
 #include <stdexcept>
 
 // ReLU Implementation

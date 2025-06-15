@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include <cmath>
-#include "neural_network/matrix.hpp"
+#include "../../include/neural_network/matrix.hpp"
 
 const double TOLERANCE = 1e-6;
 

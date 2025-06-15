@@ -2,7 +2,7 @@
 #include <cassert>
 #include <cmath>
 #include <memory>
-#include "neural_network/activation_functions.hpp"
+#include "../../include/neural_network/activation_functions.hpp"
 
 const double TOLERANCE = 1e-6;
 

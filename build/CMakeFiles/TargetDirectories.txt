@@ -6,6 +6,8 @@
 /workspace/build/CMakeFiles/training_monitor_lib.dir
 /workspace/build/CMakeFiles/ppo_buffer_lib.dir
 /workspace/build/CMakeFiles/policy_network_lib.dir
+/workspace/build/CMakeFiles/value_network_lib.dir
+/workspace/build/CMakeFiles/ppo_agent_lib.dir
 /workspace/build/CMakeFiles/test_matrix.dir
 /workspace/build/CMakeFiles/test_activation_functions.dir
 /workspace/build/CMakeFiles/test_dense_layer.dir
@@ -14,7 +16,10 @@
 /workspace/build/CMakeFiles/test_training_monitor.dir
 /workspace/build/CMakeFiles/test_ppo_buffer.dir
 /workspace/build/CMakeFiles/test_policy_network.dir
+/workspace/build/CMakeFiles/test_value_network.dir
+/workspace/build/CMakeFiles/test_ppo_agent.dir
 /workspace/build/CMakeFiles/visualization_demo.dir
+/workspace/build/CMakeFiles/basic_ppo_training.dir
 /workspace/build/CMakeFiles/test.dir
 /workspace/build/CMakeFiles/edit_cache.dir
 /workspace/build/CMakeFiles/rebuild_cache.dir

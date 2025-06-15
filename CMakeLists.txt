@@ -52,6 +52,16 @@ add_library(policy_network_lib STATIC
 )
 target_link_libraries(policy_network_lib neural_network_lib dense_layer_lib matrix_lib activation_lib)
 
+add_library(value_network_lib STATIC
+    src/ppo/value_network.cpp
+)
+target_link_libraries(value_network_lib neural_network_lib dense_layer_lib matrix_lib activation_lib)
+
+add_library(ppo_agent_lib STATIC
+    src/ppo/ppo_agent.cpp
+)
+target_link_libraries(ppo_agent_lib policy_network_lib value_network_lib ppo_buffer_lib neural_network_lib dense_layer_lib matrix_lib activation_lib)
+
 # Link math library
 target_link_libraries(matrix_lib m)
 target_link_libraries(cartpole_lib m)
@@ -99,6 +109,19 @@ add_executable(test_policy_network tests/ppo/test_policy_network.cpp)
 target_link_libraries(test_policy_network policy_network_lib neural_network_lib dense_layer_lib matrix_lib activation_lib)
 add_test(NAME PolicyNetworkTest COMMAND test_policy_network)
 
+# Value Network Test
+add_executable(test_value_network tests/ppo/test_value_network.cpp)
+target_link_libraries(test_value_network value_network_lib neural_network_lib dense_layer_lib matrix_lib activation_lib)
+add_test(NAME ValueNetworkTest COMMAND test_value_network)
+
+# PPO Agent Test
+add_executable(test_ppo_agent tests/ppo/test_ppo_agent.cpp)
+target_link_libraries(test_ppo_agent ppo_agent_lib policy_network_lib value_network_lib ppo_buffer_lib neural_network_lib dense_layer_lib matrix_lib activation_lib)
+add_test(NAME PPOAgentTest COMMAND test_ppo_agent)
+
 # Example programs
 add_executable(visualization_demo examples/visualization_demo.cpp)
-target_link_libraries(visualization_demo training_monitor_lib) 
+target_link_libraries(visualization_demo training_monitor_lib)
+
+add_executable(basic_ppo_training examples/basic_ppo_training.cpp)
+target_link_libraries(basic_ppo_training ppo_agent_lib policy_network_lib value_network_lib ppo_buffer_lib cartpole_lib training_monitor_lib neural_network_lib dense_layer_lib matrix_lib activation_lib) 

@@ -231,6 +231,32 @@ policy_network_lib/fast:
 .PHONY : policy_network_lib/fast
 
 #=============================================================================
+# Target rules for targets named value_network_lib
+
+# Build rule for target.
+value_network_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 value_network_lib
+.PHONY : value_network_lib
+
+# fast build rule for target.
+value_network_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/value_network_lib.dir/build.make CMakeFiles/value_network_lib.dir/build
+.PHONY : value_network_lib/fast
+
+#=============================================================================
+# Target rules for targets named ppo_agent_lib
+
+# Build rule for target.
+ppo_agent_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ppo_agent_lib
+.PHONY : ppo_agent_lib
+
+# fast build rule for target.
+ppo_agent_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_agent_lib.dir/build.make CMakeFiles/ppo_agent_lib.dir/build
+.PHONY : ppo_agent_lib/fast
+
+#=============================================================================
 # Target rules for targets named test_matrix
 
 # Build rule for target.
@@ -335,6 +361,32 @@ test_policy_network/fast:
 .PHONY : test_policy_network/fast
 
 #=============================================================================
+# Target rules for targets named test_value_network
+
+# Build rule for target.
+test_value_network: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_value_network
+.PHONY : test_value_network
+
+# fast build rule for target.
+test_value_network/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_network.dir/build.make CMakeFiles/test_value_network.dir/build
+.PHONY : test_value_network/fast
+
+#=============================================================================
+# Target rules for targets named test_ppo_agent
+
+# Build rule for target.
+test_ppo_agent: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_ppo_agent
+.PHONY : test_ppo_agent
+
+# fast build rule for target.
+test_ppo_agent/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_agent.dir/build.make CMakeFiles/test_ppo_agent.dir/build
+.PHONY : test_ppo_agent/fast
+
+#=============================================================================
 # Target rules for targets named visualization_demo
 
 # Build rule for target.
@@ -346,6 +398,43 @@ visualization_demo: cmake_check_build_system
 visualization_demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/build
 .PHONY : visualization_demo/fast
+
+#=============================================================================
+# Target rules for targets named basic_ppo_training
+
+# Build rule for target.
+basic_ppo_training: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 basic_ppo_training
+.PHONY : basic_ppo_training
+
+# fast build rule for target.
+basic_ppo_training/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/build
+.PHONY : basic_ppo_training/fast
+
+examples/basic_ppo_training.o: examples/basic_ppo_training.cpp.o
+.PHONY : examples/basic_ppo_training.o
+
+# target to build an object file
+examples/basic_ppo_training.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/examples/basic_ppo_training.cpp.o
+.PHONY : examples/basic_ppo_training.cpp.o
+
+examples/basic_ppo_training.i: examples/basic_ppo_training.cpp.i
+.PHONY : examples/basic_ppo_training.i
+
+# target to preprocess a source file
+examples/basic_ppo_training.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/examples/basic_ppo_training.cpp.i
+.PHONY : examples/basic_ppo_training.cpp.i
+
+examples/basic_ppo_training.s: examples/basic_ppo_training.cpp.s
+.PHONY : examples/basic_ppo_training.s
+
+# target to generate assembly for a file
+examples/basic_ppo_training.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/examples/basic_ppo_training.cpp.s
+.PHONY : examples/basic_ppo_training.cpp.s
 
 examples/visualization_demo.o: examples/visualization_demo.cpp.o
 .PHONY : examples/visualization_demo.o
@@ -515,6 +604,30 @@ src/ppo/policy_network.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/policy_network_lib.dir/build.make CMakeFiles/policy_network_lib.dir/src/ppo/policy_network.cpp.s
 .PHONY : src/ppo/policy_network.cpp.s
 
+src/ppo/ppo_agent.o: src/ppo/ppo_agent.cpp.o
+.PHONY : src/ppo/ppo_agent.o
+
+# target to build an object file
+src/ppo/ppo_agent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_agent_lib.dir/build.make CMakeFiles/ppo_agent_lib.dir/src/ppo/ppo_agent.cpp.o
+.PHONY : src/ppo/ppo_agent.cpp.o
+
+src/ppo/ppo_agent.i: src/ppo/ppo_agent.cpp.i
+.PHONY : src/ppo/ppo_agent.i
+
+# target to preprocess a source file
+src/ppo/ppo_agent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_agent_lib.dir/build.make CMakeFiles/ppo_agent_lib.dir/src/ppo/ppo_agent.cpp.i
+.PHONY : src/ppo/ppo_agent.cpp.i
+
+src/ppo/ppo_agent.s: src/ppo/ppo_agent.cpp.s
+.PHONY : src/ppo/ppo_agent.s
+
+# target to generate assembly for a file
+src/ppo/ppo_agent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_agent_lib.dir/build.make CMakeFiles/ppo_agent_lib.dir/src/ppo/ppo_agent.cpp.s
+.PHONY : src/ppo/ppo_agent.cpp.s
+
 src/ppo/ppo_buffer.o: src/ppo/ppo_buffer.cpp.o
 .PHONY : src/ppo/ppo_buffer.o
 
@@ -538,6 +651,30 @@ src/ppo/ppo_buffer.s: src/ppo/ppo_buffer.cpp.s
 src/ppo/ppo_buffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_buffer_lib.dir/build.make CMakeFiles/ppo_buffer_lib.dir/src/ppo/ppo_buffer.cpp.s
 .PHONY : src/ppo/ppo_buffer.cpp.s
+
+src/ppo/value_network.o: src/ppo/value_network.cpp.o
+.PHONY : src/ppo/value_network.o
+
+# target to build an object file
+src/ppo/value_network.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/value_network_lib.dir/build.make CMakeFiles/value_network_lib.dir/src/ppo/value_network.cpp.o
+.PHONY : src/ppo/value_network.cpp.o
+
+src/ppo/value_network.i: src/ppo/value_network.cpp.i
+.PHONY : src/ppo/value_network.i
+
+# target to preprocess a source file
+src/ppo/value_network.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/value_network_lib.dir/build.make CMakeFiles/value_network_lib.dir/src/ppo/value_network.cpp.i
+.PHONY : src/ppo/value_network.cpp.i
+
+src/ppo/value_network.s: src/ppo/value_network.cpp.s
+.PHONY : src/ppo/value_network.s
+
+# target to generate assembly for a file
+src/ppo/value_network.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/value_network_lib.dir/build.make CMakeFiles/value_network_lib.dir/src/ppo/value_network.cpp.s
+.PHONY : src/ppo/value_network.cpp.s
 
 src/utils/training_monitor.o: src/utils/training_monitor.cpp.o
 .PHONY : src/utils/training_monitor.o
@@ -707,6 +844,30 @@ tests/ppo/test_policy_network.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_policy_network.dir/build.make CMakeFiles/test_policy_network.dir/tests/ppo/test_policy_network.cpp.s
 .PHONY : tests/ppo/test_policy_network.cpp.s
 
+tests/ppo/test_ppo_agent.o: tests/ppo/test_ppo_agent.cpp.o
+.PHONY : tests/ppo/test_ppo_agent.o
+
+# target to build an object file
+tests/ppo/test_ppo_agent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_agent.dir/build.make CMakeFiles/test_ppo_agent.dir/tests/ppo/test_ppo_agent.cpp.o
+.PHONY : tests/ppo/test_ppo_agent.cpp.o
+
+tests/ppo/test_ppo_agent.i: tests/ppo/test_ppo_agent.cpp.i
+.PHONY : tests/ppo/test_ppo_agent.i
+
+# target to preprocess a source file
+tests/ppo/test_ppo_agent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_agent.dir/build.make CMakeFiles/test_ppo_agent.dir/tests/ppo/test_ppo_agent.cpp.i
+.PHONY : tests/ppo/test_ppo_agent.cpp.i
+
+tests/ppo/test_ppo_agent.s: tests/ppo/test_ppo_agent.cpp.s
+.PHONY : tests/ppo/test_ppo_agent.s
+
+# target to generate assembly for a file
+tests/ppo/test_ppo_agent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_agent.dir/build.make CMakeFiles/test_ppo_agent.dir/tests/ppo/test_ppo_agent.cpp.s
+.PHONY : tests/ppo/test_ppo_agent.cpp.s
+
 tests/ppo/test_ppo_buffer.o: tests/ppo/test_ppo_buffer.cpp.o
 .PHONY : tests/ppo/test_ppo_buffer.o
 
@@ -730,6 +891,30 @@ tests/ppo/test_ppo_buffer.s: tests/ppo/test_ppo_buffer.cpp.s
 tests/ppo/test_ppo_buffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_buffer.dir/build.make CMakeFiles/test_ppo_buffer.dir/tests/ppo/test_ppo_buffer.cpp.s
 .PHONY : tests/ppo/test_ppo_buffer.cpp.s
+
+tests/ppo/test_value_network.o: tests/ppo/test_value_network.cpp.o
+.PHONY : tests/ppo/test_value_network.o
+
+# target to build an object file
+tests/ppo/test_value_network.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_network.dir/build.make CMakeFiles/test_value_network.dir/tests/ppo/test_value_network.cpp.o
+.PHONY : tests/ppo/test_value_network.cpp.o
+
+tests/ppo/test_value_network.i: tests/ppo/test_value_network.cpp.i
+.PHONY : tests/ppo/test_value_network.i
+
+# target to preprocess a source file
+tests/ppo/test_value_network.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_network.dir/build.make CMakeFiles/test_value_network.dir/tests/ppo/test_value_network.cpp.i
+.PHONY : tests/ppo/test_value_network.cpp.i
+
+tests/ppo/test_value_network.s: tests/ppo/test_value_network.cpp.s
+.PHONY : tests/ppo/test_value_network.s
+
+# target to generate assembly for a file
+tests/ppo/test_value_network.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_network.dir/build.make CMakeFiles/test_value_network.dir/tests/ppo/test_value_network.cpp.s
+.PHONY : tests/ppo/test_value_network.cpp.s
 
 tests/utils/test_training_monitor.o: tests/utils/test_training_monitor.cpp.o
 .PHONY : tests/utils/test_training_monitor.o
@@ -765,11 +950,13 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... activation_lib"
+	@echo "... basic_ppo_training"
 	@echo "... cartpole_lib"
 	@echo "... dense_layer_lib"
 	@echo "... matrix_lib"
 	@echo "... neural_network_lib"
 	@echo "... policy_network_lib"
+	@echo "... ppo_agent_lib"
 	@echo "... ppo_buffer_lib"
 	@echo "... test_activation_functions"
 	@echo "... test_cartpole"
@@ -777,10 +964,16 @@ help:
 	@echo "... test_matrix"
 	@echo "... test_neural_network"
 	@echo "... test_policy_network"
+	@echo "... test_ppo_agent"
 	@echo "... test_ppo_buffer"
 	@echo "... test_training_monitor"
+	@echo "... test_value_network"
 	@echo "... training_monitor_lib"
+	@echo "... value_network_lib"
 	@echo "... visualization_demo"
+	@echo "... examples/basic_ppo_training.o"
+	@echo "... examples/basic_ppo_training.i"
+	@echo "... examples/basic_ppo_training.s"
 	@echo "... examples/visualization_demo.o"
 	@echo "... examples/visualization_demo.i"
 	@echo "... examples/visualization_demo.s"
@@ -802,9 +995,15 @@ help:
 	@echo "... src/ppo/policy_network.o"
 	@echo "... src/ppo/policy_network.i"
 	@echo "... src/ppo/policy_network.s"
+	@echo "... src/ppo/ppo_agent.o"
+	@echo "... src/ppo/ppo_agent.i"
+	@echo "... src/ppo/ppo_agent.s"
 	@echo "... src/ppo/ppo_buffer.o"
 	@echo "... src/ppo/ppo_buffer.i"
 	@echo "... src/ppo/ppo_buffer.s"
+	@echo "... src/ppo/value_network.o"
+	@echo "... src/ppo/value_network.i"
+	@echo "... src/ppo/value_network.s"
 	@echo "... src/utils/training_monitor.o"
 	@echo "... src/utils/training_monitor.i"
 	@echo "... src/utils/training_monitor.s"
@@ -826,9 +1025,15 @@ help:
 	@echo "... tests/ppo/test_policy_network.o"
 	@echo "... tests/ppo/test_policy_network.i"
 	@echo "... tests/ppo/test_policy_network.s"
+	@echo "... tests/ppo/test_ppo_agent.o"
+	@echo "... tests/ppo/test_ppo_agent.i"
+	@echo "... tests/ppo/test_ppo_agent.s"
 	@echo "... tests/ppo/test_ppo_buffer.o"
 	@echo "... tests/ppo/test_ppo_buffer.i"
 	@echo "... tests/ppo/test_ppo_buffer.s"
+	@echo "... tests/ppo/test_value_network.o"
+	@echo "... tests/ppo/test_value_network.i"
+	@echo "... tests/ppo/test_value_network.s"
 	@echo "... tests/utils/test_training_monitor.o"
 	@echo "... tests/utils/test_training_monitor.i"
 	@echo "... tests/utils/test_training_monitor.s"

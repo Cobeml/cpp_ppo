@@ -57,6 +57,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/training_monitor_lib.dir/DependInfo.cmake"
   "CMakeFiles/ppo_buffer_lib.dir/DependInfo.cmake"
   "CMakeFiles/policy_network_lib.dir/DependInfo.cmake"
+  "CMakeFiles/value_network_lib.dir/DependInfo.cmake"
+  "CMakeFiles/ppo_agent_lib.dir/DependInfo.cmake"
   "CMakeFiles/test_matrix.dir/DependInfo.cmake"
   "CMakeFiles/test_activation_functions.dir/DependInfo.cmake"
   "CMakeFiles/test_dense_layer.dir/DependInfo.cmake"
@@ -65,5 +67,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test_training_monitor.dir/DependInfo.cmake"
   "CMakeFiles/test_ppo_buffer.dir/DependInfo.cmake"
   "CMakeFiles/test_policy_network.dir/DependInfo.cmake"
+  "CMakeFiles/test_value_network.dir/DependInfo.cmake"
+  "CMakeFiles/test_ppo_agent.dir/DependInfo.cmake"
   "CMakeFiles/visualization_demo.dir/DependInfo.cmake"
+  "CMakeFiles/basic_ppo_training.dir/DependInfo.cmake"
   )

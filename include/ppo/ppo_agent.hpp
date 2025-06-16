@@ -27,7 +27,8 @@ private:
     double last_total_loss;
     
 public:
-    PPOAgent(size_t state_size, size_t action_size, size_t buffer_size = 2048);
+    PPOAgent(size_t state_size, size_t action_size, size_t buffer_size = 2048, 
+             double policy_lr = 3e-5, double value_lr = 1e-4);
     
     // Hyperparameter setters
     void set_clip_epsilon(double eps) { clip_epsilon = eps; }
@@ -37,6 +38,7 @@ public:
     void set_batch_size(size_t size) { batch_size = size; }
     void set_gamma(double g) { gamma = g; }
     void set_lambda(double l) { lambda = l; }
+    void set_learning_rates(double policy_lr, double value_lr);
     
     // Interaction with environment
     int select_action(const Matrix& state);

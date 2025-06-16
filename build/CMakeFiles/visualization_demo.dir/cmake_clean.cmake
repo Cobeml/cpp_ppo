@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/visualization_demo.dir/link.d"
   "CMakeFiles/visualization_demo.dir/examples/visualization_demo.cpp.o"
   "CMakeFiles/visualization_demo.dir/examples/visualization_demo.cpp.o.d"
   "visualization_demo"

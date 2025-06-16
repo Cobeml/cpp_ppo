@@ -8,9 +8,10 @@ namespace {
     }
 }
 
-PPOAgent::PPOAgent(size_t state_size, size_t action_size, size_t buffer_size)
-    : policy(std::make_unique<PolicyNetwork>(state_size, action_size, 3e-4)),
-      value_function(std::make_unique<ValueNetwork>(state_size, 1e-3)),
+PPOAgent::PPOAgent(size_t state_size, size_t action_size, size_t buffer_size, 
+                   double policy_lr, double value_lr)
+    : policy(std::make_unique<PolicyNetwork>(state_size, action_size, policy_lr)),
+      value_function(std::make_unique<ValueNetwork>(state_size, value_lr)),
       buffer(buffer_size),
       clip_epsilon(0.2),
       entropy_coefficient(0.01),
@@ -181,4 +182,9 @@ void PPOAgent::save_models(const std::string& policy_filename, const std::string
 void PPOAgent::load_models(const std::string& policy_filename, const std::string& value_filename) {
     policy->load_weights(policy_filename);
     value_function->load_weights(value_filename);
+}
+
+void PPOAgent::set_learning_rates(double policy_lr, double value_lr) {
+    policy->set_learning_rate(policy_lr);
+    value_function->set_learning_rate(value_lr);
 }

@@ -1,1 +1,1 @@
-/usr/bin/c++  -Wall -Wextra -O3 -Xlinker --dependency-file=CMakeFiles/test_training_monitor.dir/link.d CMakeFiles/test_training_monitor.dir/tests/utils/test_training_monitor.cpp.o -o test_training_monitor  libtraining_monitor_lib.a
+/usr/bin/c++  -Wall -Wextra -O3 -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_training_monitor.dir/tests/utils/test_training_monitor.cpp.o -o test_training_monitor  libtraining_monitor_lib.a

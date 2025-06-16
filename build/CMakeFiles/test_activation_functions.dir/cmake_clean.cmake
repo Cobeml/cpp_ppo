@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test_activation_functions.dir/link.d"
   "CMakeFiles/test_activation_functions.dir/tests/neural_network/test_activation_functions.cpp.o"
   "CMakeFiles/test_activation_functions.dir/tests/neural_network/test_activation_functions.cpp.o.d"
   "test_activation_functions"

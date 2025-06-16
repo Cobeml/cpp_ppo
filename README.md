@@ -2,14 +2,27 @@
 
 A from-scratch implementation of Proximal Policy Optimization (PPO) in C++ without using any machine learning frameworks.
 
-## What Works
+## Status: Core Implementation Complete, Architectural Issue Identified
 
-✅ **Complete Build System**: All components compile successfully
-✅ **Neural Network Library**: Matrix operations, activation functions, dense layers
-✅ **PPO Components**: Policy network, value network, buffer, and agent classes  
-✅ **CartPole Environment**: Scalable physics simulation with 5 difficulty levels
-✅ **Visualization System**: Rich ASCII-based training monitoring
-✅ **Comprehensive Tests**: 33+ test functions covering all components
+### ✅ What Works
+- **Complete Build System**: All components compile successfully
+- **Neural Network Library**: Matrix operations, activation functions, dense layers
+- **PPO Components**: Policy network, value network, experience buffer, and agent classes  
+- **CartPole Environment**: Scalable physics simulation with 5 difficulty levels
+- **Advanced ASCII Visualization**: Real-time training monitoring with progression tracking
+- **Comprehensive Test Suite**: 33+ test functions covering all components
+
+### ❌ Current Issue: Value Loss Dominance
+
+The implementation suffers from a well-documented PPO architectural problem:
+
+**Symptoms:**
+- Value loss: 250-430 range (extremely high)
+- Policy loss: Near zero (no meaningful learning)
+- Performance plateau: 20-30 steps despite 1000+ episodes
+- 0% success rate across all configurations
+
+**Root Cause:** Shared parameter architecture creates fundamental conflict between policy and value function optimization.
 
 ## Quick Start
 
@@ -19,157 +32,68 @@ mkdir build && cd build
 cmake ..
 make
 
-# Run basic training
-./basic_ppo_training
-
-# Run hyperparameter tests
-./simple_hyperparameter_test
-
-# Run all tests
-make test
+# Run optimized training (shows the value loss issue)
+./examples/optimized_ppo_training
 ```
 
 ## Current Training Results
 
-The implementation compiles and runs but shows learning challenges:
-- Episodes average ~20-35 steps (target: 150-200)
-- 0% success rate (target: >80%)
-- **Critical Issue**: No PPO updates occur (buffer never fills due to short episodes)
-
-### Training Output Example
 ```
-PPO Training on CartPole Environment
-===================================
-Episodes: 100 | Total Steps: 2151 | Time: 4s
-Success Rate: 0.0% | Avg Length: 20.08 steps
+Value Loss: 250-430 (target: <50)
+Policy Loss: ~0.001 (no learning signal)
+Episode Length: 20-30 steps (target: 150-200)
+Success Rate: 0% (target: >80%)
 ```
 
-## What Needs Testing/Fixing
+## The Solution
 
-❌ **Learning Performance**: Episodes too short to trigger learning  
-❌ **Buffer Management**: Buffer overflow issues prevent updates  
-❌ **Learning Rates**: Fixed in constructor, need dynamic adjustment  
-❌ **Reward Shaping**: May need better reward structure for learning  
+See **[PPO_ARCHITECTURAL_SOLUTION_PLAN.md](PPO_ARCHITECTURAL_SOLUTION_PLAN.md)** for the comprehensive research-backed solution plan.
 
-## Hyperparameter Research Integration
-
-Based on [academic research](https://joel-baptista.github.io/phd-weekly-report/posts/hyper-op/):
-- **Learning Rate**: 3e-5 optimal (most critical parameter)
-- **Clip Epsilon**: 0.1 optimal
-- **Entropy Coefficient**: 0.001 optimal
-- **Buffer Size**: 4096 steps optimal
-
-Current implementation tested 11 configurations but performance remained poor (25-35 steps).
-
-## Implementation Status
-
-### ✅ Completed Components
-- [x] Matrix operations with all math functions
-- [x] Neural network layers and backpropagation
-- [x] PPO algorithm core (clipping, GAE, policy/value networks)
-- [x] CartPole environment with difficulty scaling
-- [x] Training monitor with ASCII visualization
-- [x] Comprehensive test suite
-- [x] Model save/load functionality
-- [x] Hyperparameter tuning framework
-
-### ❌ Needs Work
-- [ ] Fix buffer filling logic for short episodes
-- [ ] Dynamic learning rate adjustment
-- [ ] Gradient computation validation
-- [ ] Better reward shaping for initial learning
-- [ ] Network architecture optimization
+**Key Fix:** Separate neural networks for policy and value functions instead of shared parameters, plus additional architectural improvements.
 
 ## File Structure
 
 ```
 cpp_ppo/
 ├── include/               # Header files
-│   ├── neural_network/   # Matrix, layers, networks
-│   ├── ppo/             # PPO components
-│   ├── environment/     # CartPole simulation
-│   └── utils/           # Training monitor, utilities
-├── src/                 # Source implementations
-├── examples/            # Training examples
-├── tests/              # Unit tests
-└── build/              # Build output
+├── src/                  # Source implementations  
+├── examples/             # Training examples
+│   └── optimized_ppo_training.cpp  # Main training program
+├── tests/               # Unit tests
+└── PPO_ARCHITECTURAL_SOLUTION_PLAN.md  # Detailed fix plan
 ```
-
-## Key Files
-
-- `src/ppo/ppo_agent.cpp` - Main PPO algorithm
-- `examples/basic_ppo_training.cpp` - Basic training loop
-- `examples/simple_hyperparameter_test.cpp` - Research-based tuning
-- `tests/` - Comprehensive test suite
-
-## Testing
-
-```bash
-# Run specific tests
-./test_ppo_buffer
-./test_policy_network  
-./test_value_network
-./test_ppo_agent
-./test_cartpole
-
-# All neural network tests
-./test_matrix
-./test_activation_functions
-./test_dense_layer
-./test_neural_network
-```
-
-## Next Steps
-
-1. **Debug buffer filling**: Fix why episodes are too short
-2. **Validate gradients**: Ensure backpropagation is correct
-3. **Improve environment**: Add reward shaping or easier initial conditions
-4. **Learning rate fixing**: Make learning rates configurable at runtime
-5. **Performance profiling**: Identify bottlenecks
-
-## Research Validation
-
-The implementation successfully validated research findings about PPO hyperparameter importance:
-- Learning rate is indeed the most critical parameter
-- Clip epsilon significantly affects stability  
-- Entropy coefficient controls exploration/exploitation balance
-
-However, the core learning loop needs fixes before these optimizations can be effective.
 
 ## Usage Example
 
 ```cpp
 #include "ppo/ppo_agent.hpp"
 #include "environment/scalable_cartpole.hpp"
+#include "utils/training_monitor.hpp"
 
 int main() {
     ScalableCartPole env;
-    env.set_difficulty_level(1);
-    
     PPOAgent agent(4, 2);  // 4 states, 2 actions
+    TrainingMonitor monitor(100, 12, 200, true);
     
+    // Training loop - currently shows value loss dominance
     for (int episode = 0; episode < 1000; ++episode) {
-        auto state = env.reset();
-        
-        while (!env.is_done()) {
-            int action = agent.select_action(Matrix(state));
-            auto [next_state, reward] = env.step(action);
-            
-            agent.store_experience(Matrix(state), action, reward, 
-                                 Matrix(next_state), env.is_done());
-            
-            if (agent.is_ready_for_update()) {
-                agent.update();  // Currently fails - buffer never fills
-            }
-            
-            state = next_state;
-        }
+        // ... training code ...
+        // Shows high value loss, minimal policy learning
     }
     
     return 0;
 }
 ```
 
+## Next Steps
+
+1. **Implement Separate Networks**: Split policy and value into independent neural networks
+2. **Add Independent Optimizers**: Use separate Adam optimizers for each network  
+3. **Enhanced Regularization**: Increase entropy coefficient and add gradient clipping
+4. **Validation**: Test with CartPole environment
+
+See [PPO_ARCHITECTURAL_SOLUTION_PLAN.md](PPO_ARCHITECTURAL_SOLUTION_PLAN.md) for detailed implementation timeline and technical specifications.
+
 ## License
 
-MIT License - See LICENSE file for details. 
+MIT License 

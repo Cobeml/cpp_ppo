@@ -69,6 +69,7 @@ all: CMakeFiles/dense_layer_lib.dir/all
 all: CMakeFiles/neural_network_lib.dir/all
 all: CMakeFiles/cartpole_lib.dir/all
 all: CMakeFiles/training_monitor_lib.dir/all
+all: CMakeFiles/ppo_debugger_lib.dir/all
 all: CMakeFiles/ppo_buffer_lib.dir/all
 all: CMakeFiles/policy_network_lib.dir/all
 all: CMakeFiles/value_network_lib.dir/all
@@ -83,12 +84,18 @@ all: CMakeFiles/test_ppo_buffer.dir/all
 all: CMakeFiles/test_policy_network.dir/all
 all: CMakeFiles/test_value_network.dir/all
 all: CMakeFiles/test_ppo_agent.dir/all
-all: CMakeFiles/visualization_demo.dir/all
-all: CMakeFiles/basic_ppo_training.dir/all
-all: CMakeFiles/tuned_ppo_training.dir/all
-all: CMakeFiles/hyperparameter_tuning.dir/all
-all: CMakeFiles/simple_hyperparameter_test.dir/all
-all: CMakeFiles/fixed_ppo_training.dir/all
+all: CMakeFiles/test_gradient_computation.dir/all
+all: CMakeFiles/test_value_function_stability.dir/all
+all: CMakeFiles/diagnostic_ppo_training.dir/all
+all: CMakeFiles/hyperparameter_optimization.dir/all
+all: CMakeFiles/phase1_configuration_tests.dir/all
+all: CMakeFiles/phase2_advanced_tuning.dir/all
+all: CMakeFiles/simple_phase2_test.dir/all
+all: CMakeFiles/stability_analysis_test.dir/all
+all: CMakeFiles/optimal_config_validation.dir/all
+all: CMakeFiles/enhanced_visual_training.dir/all
+all: CMakeFiles/final_visual_training.dir/all
+all: CMakeFiles/optimized_ppo_training.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
@@ -98,6 +105,7 @@ codegen: CMakeFiles/dense_layer_lib.dir/codegen
 codegen: CMakeFiles/neural_network_lib.dir/codegen
 codegen: CMakeFiles/cartpole_lib.dir/codegen
 codegen: CMakeFiles/training_monitor_lib.dir/codegen
+codegen: CMakeFiles/ppo_debugger_lib.dir/codegen
 codegen: CMakeFiles/ppo_buffer_lib.dir/codegen
 codegen: CMakeFiles/policy_network_lib.dir/codegen
 codegen: CMakeFiles/value_network_lib.dir/codegen
@@ -112,12 +120,18 @@ codegen: CMakeFiles/test_ppo_buffer.dir/codegen
 codegen: CMakeFiles/test_policy_network.dir/codegen
 codegen: CMakeFiles/test_value_network.dir/codegen
 codegen: CMakeFiles/test_ppo_agent.dir/codegen
-codegen: CMakeFiles/visualization_demo.dir/codegen
-codegen: CMakeFiles/basic_ppo_training.dir/codegen
-codegen: CMakeFiles/tuned_ppo_training.dir/codegen
-codegen: CMakeFiles/hyperparameter_tuning.dir/codegen
-codegen: CMakeFiles/simple_hyperparameter_test.dir/codegen
-codegen: CMakeFiles/fixed_ppo_training.dir/codegen
+codegen: CMakeFiles/test_gradient_computation.dir/codegen
+codegen: CMakeFiles/test_value_function_stability.dir/codegen
+codegen: CMakeFiles/diagnostic_ppo_training.dir/codegen
+codegen: CMakeFiles/hyperparameter_optimization.dir/codegen
+codegen: CMakeFiles/phase1_configuration_tests.dir/codegen
+codegen: CMakeFiles/phase2_advanced_tuning.dir/codegen
+codegen: CMakeFiles/simple_phase2_test.dir/codegen
+codegen: CMakeFiles/stability_analysis_test.dir/codegen
+codegen: CMakeFiles/optimal_config_validation.dir/codegen
+codegen: CMakeFiles/enhanced_visual_training.dir/codegen
+codegen: CMakeFiles/final_visual_training.dir/codegen
+codegen: CMakeFiles/optimized_ppo_training.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -131,6 +145,7 @@ clean: CMakeFiles/dense_layer_lib.dir/clean
 clean: CMakeFiles/neural_network_lib.dir/clean
 clean: CMakeFiles/cartpole_lib.dir/clean
 clean: CMakeFiles/training_monitor_lib.dir/clean
+clean: CMakeFiles/ppo_debugger_lib.dir/clean
 clean: CMakeFiles/ppo_buffer_lib.dir/clean
 clean: CMakeFiles/policy_network_lib.dir/clean
 clean: CMakeFiles/value_network_lib.dir/clean
@@ -145,12 +160,18 @@ clean: CMakeFiles/test_ppo_buffer.dir/clean
 clean: CMakeFiles/test_policy_network.dir/clean
 clean: CMakeFiles/test_value_network.dir/clean
 clean: CMakeFiles/test_ppo_agent.dir/clean
-clean: CMakeFiles/visualization_demo.dir/clean
-clean: CMakeFiles/basic_ppo_training.dir/clean
-clean: CMakeFiles/tuned_ppo_training.dir/clean
-clean: CMakeFiles/hyperparameter_tuning.dir/clean
-clean: CMakeFiles/simple_hyperparameter_test.dir/clean
-clean: CMakeFiles/fixed_ppo_training.dir/clean
+clean: CMakeFiles/test_gradient_computation.dir/clean
+clean: CMakeFiles/test_value_function_stability.dir/clean
+clean: CMakeFiles/diagnostic_ppo_training.dir/clean
+clean: CMakeFiles/hyperparameter_optimization.dir/clean
+clean: CMakeFiles/phase1_configuration_tests.dir/clean
+clean: CMakeFiles/phase2_advanced_tuning.dir/clean
+clean: CMakeFiles/simple_phase2_test.dir/clean
+clean: CMakeFiles/stability_analysis_test.dir/clean
+clean: CMakeFiles/optimal_config_validation.dir/clean
+clean: CMakeFiles/enhanced_visual_training.dir/clean
+clean: CMakeFiles/final_visual_training.dir/clean
+clean: CMakeFiles/optimized_ppo_training.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -160,7 +181,7 @@ clean: CMakeFiles/fixed_ppo_training.dir/clean
 CMakeFiles/matrix_lib.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_lib.dir/build.make CMakeFiles/matrix_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_lib.dir/build.make CMakeFiles/matrix_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=13,14 "Built target matrix_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=15,16 "Built target matrix_lib"
 .PHONY : CMakeFiles/matrix_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -177,7 +198,7 @@ matrix_lib: CMakeFiles/matrix_lib.dir/rule
 # codegen rule for target.
 CMakeFiles/matrix_lib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_lib.dir/build.make CMakeFiles/matrix_lib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=13,14 "Finished codegen for target matrix_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=15,16 "Finished codegen for target matrix_lib"
 .PHONY : CMakeFiles/matrix_lib.dir/codegen
 
 # clean rule for target.
@@ -225,7 +246,7 @@ CMakeFiles/dense_layer_lib.dir/all: CMakeFiles/matrix_lib.dir/all
 CMakeFiles/dense_layer_lib.dir/all: CMakeFiles/activation_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dense_layer_lib.dir/build.make CMakeFiles/dense_layer_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dense_layer_lib.dir/build.make CMakeFiles/dense_layer_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=7,8 "Built target dense_layer_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=5,6 "Built target dense_layer_lib"
 .PHONY : CMakeFiles/dense_layer_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -242,7 +263,7 @@ dense_layer_lib: CMakeFiles/dense_layer_lib.dir/rule
 # codegen rule for target.
 CMakeFiles/dense_layer_lib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dense_layer_lib.dir/build.make CMakeFiles/dense_layer_lib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=7,8 "Finished codegen for target dense_layer_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=5,6 "Finished codegen for target dense_layer_lib"
 .PHONY : CMakeFiles/dense_layer_lib.dir/codegen
 
 # clean rule for target.
@@ -259,7 +280,7 @@ CMakeFiles/neural_network_lib.dir/all: CMakeFiles/activation_lib.dir/all
 CMakeFiles/neural_network_lib.dir/all: CMakeFiles/dense_layer_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_network_lib.dir/build.make CMakeFiles/neural_network_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_network_lib.dir/build.make CMakeFiles/neural_network_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=15,16 "Built target neural_network_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=17,18 "Built target neural_network_lib"
 .PHONY : CMakeFiles/neural_network_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -276,7 +297,7 @@ neural_network_lib: CMakeFiles/neural_network_lib.dir/rule
 # codegen rule for target.
 CMakeFiles/neural_network_lib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural_network_lib.dir/build.make CMakeFiles/neural_network_lib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=15,16 "Finished codegen for target neural_network_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=17,18 "Finished codegen for target neural_network_lib"
 .PHONY : CMakeFiles/neural_network_lib.dir/codegen
 
 # clean rule for target.
@@ -291,7 +312,7 @@ CMakeFiles/neural_network_lib.dir/clean:
 CMakeFiles/cartpole_lib.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartpole_lib.dir/build.make CMakeFiles/cartpole_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartpole_lib.dir/build.make CMakeFiles/cartpole_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=5,6 "Built target cartpole_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=3,4 "Built target cartpole_lib"
 .PHONY : CMakeFiles/cartpole_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -308,7 +329,7 @@ cartpole_lib: CMakeFiles/cartpole_lib.dir/rule
 # codegen rule for target.
 CMakeFiles/cartpole_lib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartpole_lib.dir/build.make CMakeFiles/cartpole_lib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=5,6 "Finished codegen for target cartpole_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=3,4 "Finished codegen for target cartpole_lib"
 .PHONY : CMakeFiles/cartpole_lib.dir/codegen
 
 # clean rule for target.
@@ -323,7 +344,7 @@ CMakeFiles/cartpole_lib.dir/clean:
 CMakeFiles/training_monitor_lib.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/training_monitor_lib.dir/build.make CMakeFiles/training_monitor_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/training_monitor_lib.dir/build.make CMakeFiles/training_monitor_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=45,46 "Built target training_monitor_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=63,64 "Built target training_monitor_lib"
 .PHONY : CMakeFiles/training_monitor_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -340,7 +361,7 @@ training_monitor_lib: CMakeFiles/training_monitor_lib.dir/rule
 # codegen rule for target.
 CMakeFiles/training_monitor_lib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/training_monitor_lib.dir/build.make CMakeFiles/training_monitor_lib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=45,46 "Finished codegen for target training_monitor_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=63,64 "Finished codegen for target training_monitor_lib"
 .PHONY : CMakeFiles/training_monitor_lib.dir/codegen
 
 # clean rule for target.
@@ -349,13 +370,52 @@ CMakeFiles/training_monitor_lib.dir/clean:
 .PHONY : CMakeFiles/training_monitor_lib.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/ppo_debugger_lib.dir
+
+# All Build rule for target.
+CMakeFiles/ppo_debugger_lib.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/ppo_debugger_lib.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/ppo_debugger_lib.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/ppo_debugger_lib.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/ppo_debugger_lib.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/ppo_debugger_lib.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/ppo_debugger_lib.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/ppo_debugger_lib.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_debugger_lib.dir/build.make CMakeFiles/ppo_debugger_lib.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_debugger_lib.dir/build.make CMakeFiles/ppo_debugger_lib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=33,34 "Built target ppo_debugger_lib"
+.PHONY : CMakeFiles/ppo_debugger_lib.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ppo_debugger_lib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 18
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ppo_debugger_lib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
+.PHONY : CMakeFiles/ppo_debugger_lib.dir/rule
+
+# Convenience name for target.
+ppo_debugger_lib: CMakeFiles/ppo_debugger_lib.dir/rule
+.PHONY : ppo_debugger_lib
+
+# codegen rule for target.
+CMakeFiles/ppo_debugger_lib.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_debugger_lib.dir/build.make CMakeFiles/ppo_debugger_lib.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=33,34 "Finished codegen for target ppo_debugger_lib"
+.PHONY : CMakeFiles/ppo_debugger_lib.dir/codegen
+
+# clean rule for target.
+CMakeFiles/ppo_debugger_lib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_debugger_lib.dir/build.make CMakeFiles/ppo_debugger_lib.dir/clean
+.PHONY : CMakeFiles/ppo_debugger_lib.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/ppo_buffer_lib.dir
 
 # All Build rule for target.
 CMakeFiles/ppo_buffer_lib.dir/all: CMakeFiles/matrix_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_buffer_lib.dir/build.make CMakeFiles/ppo_buffer_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_buffer_lib.dir/build.make CMakeFiles/ppo_buffer_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=21,22 "Built target ppo_buffer_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=31,32 "Built target ppo_buffer_lib"
 .PHONY : CMakeFiles/ppo_buffer_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -372,7 +432,7 @@ ppo_buffer_lib: CMakeFiles/ppo_buffer_lib.dir/rule
 # codegen rule for target.
 CMakeFiles/ppo_buffer_lib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_buffer_lib.dir/build.make CMakeFiles/ppo_buffer_lib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=21,22 "Finished codegen for target ppo_buffer_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=31,32 "Finished codegen for target ppo_buffer_lib"
 .PHONY : CMakeFiles/ppo_buffer_lib.dir/codegen
 
 # clean rule for target.
@@ -390,7 +450,7 @@ CMakeFiles/policy_network_lib.dir/all: CMakeFiles/dense_layer_lib.dir/all
 CMakeFiles/policy_network_lib.dir/all: CMakeFiles/neural_network_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/policy_network_lib.dir/build.make CMakeFiles/policy_network_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/policy_network_lib.dir/build.make CMakeFiles/policy_network_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=17,18 "Built target policy_network_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=27,28 "Built target policy_network_lib"
 .PHONY : CMakeFiles/policy_network_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -407,7 +467,7 @@ policy_network_lib: CMakeFiles/policy_network_lib.dir/rule
 # codegen rule for target.
 CMakeFiles/policy_network_lib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/policy_network_lib.dir/build.make CMakeFiles/policy_network_lib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=17,18 "Finished codegen for target policy_network_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=27,28 "Finished codegen for target policy_network_lib"
 .PHONY : CMakeFiles/policy_network_lib.dir/codegen
 
 # clean rule for target.
@@ -425,7 +485,7 @@ CMakeFiles/value_network_lib.dir/all: CMakeFiles/dense_layer_lib.dir/all
 CMakeFiles/value_network_lib.dir/all: CMakeFiles/neural_network_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/value_network_lib.dir/build.make CMakeFiles/value_network_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/value_network_lib.dir/build.make CMakeFiles/value_network_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=49,50 "Built target value_network_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=65,66 "Built target value_network_lib"
 .PHONY : CMakeFiles/value_network_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -442,7 +502,7 @@ value_network_lib: CMakeFiles/value_network_lib.dir/rule
 # codegen rule for target.
 CMakeFiles/value_network_lib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/value_network_lib.dir/build.make CMakeFiles/value_network_lib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=49,50 "Finished codegen for target value_network_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=65,66 "Finished codegen for target value_network_lib"
 .PHONY : CMakeFiles/value_network_lib.dir/codegen
 
 # clean rule for target.
@@ -463,7 +523,7 @@ CMakeFiles/ppo_agent_lib.dir/all: CMakeFiles/policy_network_lib.dir/all
 CMakeFiles/ppo_agent_lib.dir/all: CMakeFiles/value_network_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_agent_lib.dir/build.make CMakeFiles/ppo_agent_lib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_agent_lib.dir/build.make CMakeFiles/ppo_agent_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=19,20 "Built target ppo_agent_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=29,30 "Built target ppo_agent_lib"
 .PHONY : CMakeFiles/ppo_agent_lib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -480,7 +540,7 @@ ppo_agent_lib: CMakeFiles/ppo_agent_lib.dir/rule
 # codegen rule for target.
 CMakeFiles/ppo_agent_lib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_agent_lib.dir/build.make CMakeFiles/ppo_agent_lib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=19,20 "Finished codegen for target ppo_agent_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=29,30 "Finished codegen for target ppo_agent_lib"
 .PHONY : CMakeFiles/ppo_agent_lib.dir/codegen
 
 # clean rule for target.
@@ -495,7 +555,7 @@ CMakeFiles/ppo_agent_lib.dir/clean:
 CMakeFiles/test_matrix.dir/all: CMakeFiles/matrix_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_matrix.dir/build.make CMakeFiles/test_matrix.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_matrix.dir/build.make CMakeFiles/test_matrix.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=31,32 "Built target test_matrix"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=47,48 "Built target test_matrix"
 .PHONY : CMakeFiles/test_matrix.dir/all
 
 # Build rule for subdir invocation for target.
@@ -512,7 +572,7 @@ test_matrix: CMakeFiles/test_matrix.dir/rule
 # codegen rule for target.
 CMakeFiles/test_matrix.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_matrix.dir/build.make CMakeFiles/test_matrix.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=31,32 "Finished codegen for target test_matrix"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=47,48 "Finished codegen for target test_matrix"
 .PHONY : CMakeFiles/test_matrix.dir/codegen
 
 # clean rule for target.
@@ -527,7 +587,7 @@ CMakeFiles/test_matrix.dir/clean:
 CMakeFiles/test_activation_functions.dir/all: CMakeFiles/activation_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_activation_functions.dir/build.make CMakeFiles/test_activation_functions.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_activation_functions.dir/build.make CMakeFiles/test_activation_functions.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=25,26 "Built target test_activation_functions"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=39,40 "Built target test_activation_functions"
 .PHONY : CMakeFiles/test_activation_functions.dir/all
 
 # Build rule for subdir invocation for target.
@@ -544,7 +604,7 @@ test_activation_functions: CMakeFiles/test_activation_functions.dir/rule
 # codegen rule for target.
 CMakeFiles/test_activation_functions.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_activation_functions.dir/build.make CMakeFiles/test_activation_functions.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=25,26 "Finished codegen for target test_activation_functions"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=39,40 "Finished codegen for target test_activation_functions"
 .PHONY : CMakeFiles/test_activation_functions.dir/codegen
 
 # clean rule for target.
@@ -561,7 +621,7 @@ CMakeFiles/test_dense_layer.dir/all: CMakeFiles/activation_lib.dir/all
 CMakeFiles/test_dense_layer.dir/all: CMakeFiles/dense_layer_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dense_layer.dir/build.make CMakeFiles/test_dense_layer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dense_layer.dir/build.make CMakeFiles/test_dense_layer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=29,30 "Built target test_dense_layer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=43,44 "Built target test_dense_layer"
 .PHONY : CMakeFiles/test_dense_layer.dir/all
 
 # Build rule for subdir invocation for target.
@@ -578,7 +638,7 @@ test_dense_layer: CMakeFiles/test_dense_layer.dir/rule
 # codegen rule for target.
 CMakeFiles/test_dense_layer.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_dense_layer.dir/build.make CMakeFiles/test_dense_layer.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=29,30 "Finished codegen for target test_dense_layer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=43,44 "Finished codegen for target test_dense_layer"
 .PHONY : CMakeFiles/test_dense_layer.dir/codegen
 
 # clean rule for target.
@@ -596,7 +656,7 @@ CMakeFiles/test_neural_network.dir/all: CMakeFiles/dense_layer_lib.dir/all
 CMakeFiles/test_neural_network.dir/all: CMakeFiles/neural_network_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_neural_network.dir/build.make CMakeFiles/test_neural_network.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_neural_network.dir/build.make CMakeFiles/test_neural_network.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=33,34 "Built target test_neural_network"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=49,50 "Built target test_neural_network"
 .PHONY : CMakeFiles/test_neural_network.dir/all
 
 # Build rule for subdir invocation for target.
@@ -613,7 +673,7 @@ test_neural_network: CMakeFiles/test_neural_network.dir/rule
 # codegen rule for target.
 CMakeFiles/test_neural_network.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_neural_network.dir/build.make CMakeFiles/test_neural_network.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=33,34 "Finished codegen for target test_neural_network"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=49,50 "Finished codegen for target test_neural_network"
 .PHONY : CMakeFiles/test_neural_network.dir/codegen
 
 # clean rule for target.
@@ -628,7 +688,7 @@ CMakeFiles/test_neural_network.dir/clean:
 CMakeFiles/test_cartpole.dir/all: CMakeFiles/cartpole_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cartpole.dir/build.make CMakeFiles/test_cartpole.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cartpole.dir/build.make CMakeFiles/test_cartpole.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=27,28 "Built target test_cartpole"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=41,42 "Built target test_cartpole"
 .PHONY : CMakeFiles/test_cartpole.dir/all
 
 # Build rule for subdir invocation for target.
@@ -645,7 +705,7 @@ test_cartpole: CMakeFiles/test_cartpole.dir/rule
 # codegen rule for target.
 CMakeFiles/test_cartpole.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cartpole.dir/build.make CMakeFiles/test_cartpole.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=27,28 "Finished codegen for target test_cartpole"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=41,42 "Finished codegen for target test_cartpole"
 .PHONY : CMakeFiles/test_cartpole.dir/codegen
 
 # clean rule for target.
@@ -660,7 +720,7 @@ CMakeFiles/test_cartpole.dir/clean:
 CMakeFiles/test_training_monitor.dir/all: CMakeFiles/training_monitor_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_training_monitor.dir/build.make CMakeFiles/test_training_monitor.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_training_monitor.dir/build.make CMakeFiles/test_training_monitor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=41,42 "Built target test_training_monitor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=57,58 "Built target test_training_monitor"
 .PHONY : CMakeFiles/test_training_monitor.dir/all
 
 # Build rule for subdir invocation for target.
@@ -677,7 +737,7 @@ test_training_monitor: CMakeFiles/test_training_monitor.dir/rule
 # codegen rule for target.
 CMakeFiles/test_training_monitor.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_training_monitor.dir/build.make CMakeFiles/test_training_monitor.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=41,42 "Finished codegen for target test_training_monitor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=57,58 "Finished codegen for target test_training_monitor"
 .PHONY : CMakeFiles/test_training_monitor.dir/codegen
 
 # clean rule for target.
@@ -693,7 +753,7 @@ CMakeFiles/test_ppo_buffer.dir/all: CMakeFiles/matrix_lib.dir/all
 CMakeFiles/test_ppo_buffer.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_buffer.dir/build.make CMakeFiles/test_ppo_buffer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_buffer.dir/build.make CMakeFiles/test_ppo_buffer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=39,40 "Built target test_ppo_buffer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=55,56 "Built target test_ppo_buffer"
 .PHONY : CMakeFiles/test_ppo_buffer.dir/all
 
 # Build rule for subdir invocation for target.
@@ -710,7 +770,7 @@ test_ppo_buffer: CMakeFiles/test_ppo_buffer.dir/rule
 # codegen rule for target.
 CMakeFiles/test_ppo_buffer.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_buffer.dir/build.make CMakeFiles/test_ppo_buffer.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=39,40 "Finished codegen for target test_ppo_buffer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=55,56 "Finished codegen for target test_ppo_buffer"
 .PHONY : CMakeFiles/test_ppo_buffer.dir/codegen
 
 # clean rule for target.
@@ -729,7 +789,7 @@ CMakeFiles/test_policy_network.dir/all: CMakeFiles/neural_network_lib.dir/all
 CMakeFiles/test_policy_network.dir/all: CMakeFiles/policy_network_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_policy_network.dir/build.make CMakeFiles/test_policy_network.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_policy_network.dir/build.make CMakeFiles/test_policy_network.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=35,36 "Built target test_policy_network"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=51,52 "Built target test_policy_network"
 .PHONY : CMakeFiles/test_policy_network.dir/all
 
 # Build rule for subdir invocation for target.
@@ -746,7 +806,7 @@ test_policy_network: CMakeFiles/test_policy_network.dir/rule
 # codegen rule for target.
 CMakeFiles/test_policy_network.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_policy_network.dir/build.make CMakeFiles/test_policy_network.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=35,36 "Finished codegen for target test_policy_network"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=51,52 "Finished codegen for target test_policy_network"
 .PHONY : CMakeFiles/test_policy_network.dir/codegen
 
 # clean rule for target.
@@ -765,7 +825,7 @@ CMakeFiles/test_value_network.dir/all: CMakeFiles/neural_network_lib.dir/all
 CMakeFiles/test_value_network.dir/all: CMakeFiles/value_network_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_network.dir/build.make CMakeFiles/test_value_network.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_network.dir/build.make CMakeFiles/test_value_network.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=43,44 "Built target test_value_network"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=61,62 "Built target test_value_network"
 .PHONY : CMakeFiles/test_value_network.dir/all
 
 # Build rule for subdir invocation for target.
@@ -782,7 +842,7 @@ test_value_network: CMakeFiles/test_value_network.dir/rule
 # codegen rule for target.
 CMakeFiles/test_value_network.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_network.dir/build.make CMakeFiles/test_value_network.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=43,44 "Finished codegen for target test_value_network"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=61,62 "Finished codegen for target test_value_network"
 .PHONY : CMakeFiles/test_value_network.dir/codegen
 
 # clean rule for target.
@@ -804,7 +864,7 @@ CMakeFiles/test_ppo_agent.dir/all: CMakeFiles/value_network_lib.dir/all
 CMakeFiles/test_ppo_agent.dir/all: CMakeFiles/ppo_agent_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_agent.dir/build.make CMakeFiles/test_ppo_agent.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_agent.dir/build.make CMakeFiles/test_ppo_agent.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=37,38 "Built target test_ppo_agent"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=53,54 "Built target test_ppo_agent"
 .PHONY : CMakeFiles/test_ppo_agent.dir/all
 
 # Build rule for subdir invocation for target.
@@ -821,7 +881,7 @@ test_ppo_agent: CMakeFiles/test_ppo_agent.dir/rule
 # codegen rule for target.
 CMakeFiles/test_ppo_agent.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_agent.dir/build.make CMakeFiles/test_ppo_agent.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=37,38 "Finished codegen for target test_ppo_agent"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=53,54 "Finished codegen for target test_ppo_agent"
 .PHONY : CMakeFiles/test_ppo_agent.dir/codegen
 
 # clean rule for target.
@@ -830,241 +890,490 @@ CMakeFiles/test_ppo_agent.dir/clean:
 .PHONY : CMakeFiles/test_ppo_agent.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/visualization_demo.dir
+# Target rules for target CMakeFiles/test_gradient_computation.dir
 
 # All Build rule for target.
-CMakeFiles/visualization_demo.dir/all: CMakeFiles/training_monitor_lib.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=51,52 "Built target visualization_demo"
-.PHONY : CMakeFiles/visualization_demo.dir/all
+CMakeFiles/test_gradient_computation.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/test_gradient_computation.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/test_gradient_computation.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/test_gradient_computation.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/test_gradient_computation.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/test_gradient_computation.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/test_gradient_computation.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/test_gradient_computation.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_gradient_computation.dir/build.make CMakeFiles/test_gradient_computation.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_gradient_computation.dir/build.make CMakeFiles/test_gradient_computation.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=45,46 "Built target test_gradient_computation"
+.PHONY : CMakeFiles/test_gradient_computation.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/visualization_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/visualization_demo.dir/all
+CMakeFiles/test_gradient_computation.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 18
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_gradient_computation.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
-.PHONY : CMakeFiles/visualization_demo.dir/rule
+.PHONY : CMakeFiles/test_gradient_computation.dir/rule
 
 # Convenience name for target.
-visualization_demo: CMakeFiles/visualization_demo.dir/rule
-.PHONY : visualization_demo
+test_gradient_computation: CMakeFiles/test_gradient_computation.dir/rule
+.PHONY : test_gradient_computation
 
 # codegen rule for target.
-CMakeFiles/visualization_demo.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=51,52 "Finished codegen for target visualization_demo"
-.PHONY : CMakeFiles/visualization_demo.dir/codegen
+CMakeFiles/test_gradient_computation.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_gradient_computation.dir/build.make CMakeFiles/test_gradient_computation.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=45,46 "Finished codegen for target test_gradient_computation"
+.PHONY : CMakeFiles/test_gradient_computation.dir/codegen
 
 # clean rule for target.
-CMakeFiles/visualization_demo.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/clean
-.PHONY : CMakeFiles/visualization_demo.dir/clean
+CMakeFiles/test_gradient_computation.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_gradient_computation.dir/build.make CMakeFiles/test_gradient_computation.dir/clean
+.PHONY : CMakeFiles/test_gradient_computation.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/basic_ppo_training.dir
+# Target rules for target CMakeFiles/test_value_function_stability.dir
 
 # All Build rule for target.
-CMakeFiles/basic_ppo_training.dir/all: CMakeFiles/matrix_lib.dir/all
-CMakeFiles/basic_ppo_training.dir/all: CMakeFiles/activation_lib.dir/all
-CMakeFiles/basic_ppo_training.dir/all: CMakeFiles/dense_layer_lib.dir/all
-CMakeFiles/basic_ppo_training.dir/all: CMakeFiles/neural_network_lib.dir/all
-CMakeFiles/basic_ppo_training.dir/all: CMakeFiles/cartpole_lib.dir/all
-CMakeFiles/basic_ppo_training.dir/all: CMakeFiles/training_monitor_lib.dir/all
-CMakeFiles/basic_ppo_training.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
-CMakeFiles/basic_ppo_training.dir/all: CMakeFiles/policy_network_lib.dir/all
-CMakeFiles/basic_ppo_training.dir/all: CMakeFiles/value_network_lib.dir/all
-CMakeFiles/basic_ppo_training.dir/all: CMakeFiles/ppo_agent_lib.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=3,4 "Built target basic_ppo_training"
-.PHONY : CMakeFiles/basic_ppo_training.dir/all
+CMakeFiles/test_value_function_stability.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/test_value_function_stability.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/test_value_function_stability.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/test_value_function_stability.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/test_value_function_stability.dir/all: CMakeFiles/cartpole_lib.dir/all
+CMakeFiles/test_value_function_stability.dir/all: CMakeFiles/value_network_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_function_stability.dir/build.make CMakeFiles/test_value_function_stability.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_function_stability.dir/build.make CMakeFiles/test_value_function_stability.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=59,60 "Built target test_value_function_stability"
+.PHONY : CMakeFiles/test_value_function_stability.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/basic_ppo_training.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 22
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/basic_ppo_training.dir/all
+CMakeFiles/test_value_function_stability.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 14
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_value_function_stability.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
-.PHONY : CMakeFiles/basic_ppo_training.dir/rule
+.PHONY : CMakeFiles/test_value_function_stability.dir/rule
 
 # Convenience name for target.
-basic_ppo_training: CMakeFiles/basic_ppo_training.dir/rule
-.PHONY : basic_ppo_training
+test_value_function_stability: CMakeFiles/test_value_function_stability.dir/rule
+.PHONY : test_value_function_stability
 
 # codegen rule for target.
-CMakeFiles/basic_ppo_training.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=3,4 "Finished codegen for target basic_ppo_training"
-.PHONY : CMakeFiles/basic_ppo_training.dir/codegen
+CMakeFiles/test_value_function_stability.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_function_stability.dir/build.make CMakeFiles/test_value_function_stability.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=59,60 "Finished codegen for target test_value_function_stability"
+.PHONY : CMakeFiles/test_value_function_stability.dir/codegen
 
 # clean rule for target.
-CMakeFiles/basic_ppo_training.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/clean
-.PHONY : CMakeFiles/basic_ppo_training.dir/clean
+CMakeFiles/test_value_function_stability.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_function_stability.dir/build.make CMakeFiles/test_value_function_stability.dir/clean
+.PHONY : CMakeFiles/test_value_function_stability.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/tuned_ppo_training.dir
+# Target rules for target CMakeFiles/diagnostic_ppo_training.dir
 
 # All Build rule for target.
-CMakeFiles/tuned_ppo_training.dir/all: CMakeFiles/matrix_lib.dir/all
-CMakeFiles/tuned_ppo_training.dir/all: CMakeFiles/activation_lib.dir/all
-CMakeFiles/tuned_ppo_training.dir/all: CMakeFiles/dense_layer_lib.dir/all
-CMakeFiles/tuned_ppo_training.dir/all: CMakeFiles/neural_network_lib.dir/all
-CMakeFiles/tuned_ppo_training.dir/all: CMakeFiles/cartpole_lib.dir/all
-CMakeFiles/tuned_ppo_training.dir/all: CMakeFiles/training_monitor_lib.dir/all
-CMakeFiles/tuned_ppo_training.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
-CMakeFiles/tuned_ppo_training.dir/all: CMakeFiles/policy_network_lib.dir/all
-CMakeFiles/tuned_ppo_training.dir/all: CMakeFiles/value_network_lib.dir/all
-CMakeFiles/tuned_ppo_training.dir/all: CMakeFiles/ppo_agent_lib.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tuned_ppo_training.dir/build.make CMakeFiles/tuned_ppo_training.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tuned_ppo_training.dir/build.make CMakeFiles/tuned_ppo_training.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=47,48 "Built target tuned_ppo_training"
-.PHONY : CMakeFiles/tuned_ppo_training.dir/all
+CMakeFiles/diagnostic_ppo_training.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/diagnostic_ppo_training.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/diagnostic_ppo_training.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/diagnostic_ppo_training.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/diagnostic_ppo_training.dir/all: CMakeFiles/cartpole_lib.dir/all
+CMakeFiles/diagnostic_ppo_training.dir/all: CMakeFiles/training_monitor_lib.dir/all
+CMakeFiles/diagnostic_ppo_training.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/diagnostic_ppo_training.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/diagnostic_ppo_training.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/diagnostic_ppo_training.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagnostic_ppo_training.dir/build.make CMakeFiles/diagnostic_ppo_training.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagnostic_ppo_training.dir/build.make CMakeFiles/diagnostic_ppo_training.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=7,8 "Built target diagnostic_ppo_training"
+.PHONY : CMakeFiles/diagnostic_ppo_training.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/tuned_ppo_training.dir/rule: cmake_check_build_system
+CMakeFiles/diagnostic_ppo_training.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 22
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tuned_ppo_training.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/diagnostic_ppo_training.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
-.PHONY : CMakeFiles/tuned_ppo_training.dir/rule
+.PHONY : CMakeFiles/diagnostic_ppo_training.dir/rule
 
 # Convenience name for target.
-tuned_ppo_training: CMakeFiles/tuned_ppo_training.dir/rule
-.PHONY : tuned_ppo_training
+diagnostic_ppo_training: CMakeFiles/diagnostic_ppo_training.dir/rule
+.PHONY : diagnostic_ppo_training
 
 # codegen rule for target.
-CMakeFiles/tuned_ppo_training.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tuned_ppo_training.dir/build.make CMakeFiles/tuned_ppo_training.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=47,48 "Finished codegen for target tuned_ppo_training"
-.PHONY : CMakeFiles/tuned_ppo_training.dir/codegen
+CMakeFiles/diagnostic_ppo_training.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagnostic_ppo_training.dir/build.make CMakeFiles/diagnostic_ppo_training.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=7,8 "Finished codegen for target diagnostic_ppo_training"
+.PHONY : CMakeFiles/diagnostic_ppo_training.dir/codegen
 
 # clean rule for target.
-CMakeFiles/tuned_ppo_training.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tuned_ppo_training.dir/build.make CMakeFiles/tuned_ppo_training.dir/clean
-.PHONY : CMakeFiles/tuned_ppo_training.dir/clean
+CMakeFiles/diagnostic_ppo_training.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagnostic_ppo_training.dir/build.make CMakeFiles/diagnostic_ppo_training.dir/clean
+.PHONY : CMakeFiles/diagnostic_ppo_training.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/hyperparameter_tuning.dir
+# Target rules for target CMakeFiles/hyperparameter_optimization.dir
 
 # All Build rule for target.
-CMakeFiles/hyperparameter_tuning.dir/all: CMakeFiles/matrix_lib.dir/all
-CMakeFiles/hyperparameter_tuning.dir/all: CMakeFiles/activation_lib.dir/all
-CMakeFiles/hyperparameter_tuning.dir/all: CMakeFiles/dense_layer_lib.dir/all
-CMakeFiles/hyperparameter_tuning.dir/all: CMakeFiles/neural_network_lib.dir/all
-CMakeFiles/hyperparameter_tuning.dir/all: CMakeFiles/cartpole_lib.dir/all
-CMakeFiles/hyperparameter_tuning.dir/all: CMakeFiles/training_monitor_lib.dir/all
-CMakeFiles/hyperparameter_tuning.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
-CMakeFiles/hyperparameter_tuning.dir/all: CMakeFiles/policy_network_lib.dir/all
-CMakeFiles/hyperparameter_tuning.dir/all: CMakeFiles/value_network_lib.dir/all
-CMakeFiles/hyperparameter_tuning.dir/all: CMakeFiles/ppo_agent_lib.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_tuning.dir/build.make CMakeFiles/hyperparameter_tuning.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_tuning.dir/build.make CMakeFiles/hyperparameter_tuning.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=11,12 "Built target hyperparameter_tuning"
-.PHONY : CMakeFiles/hyperparameter_tuning.dir/all
+CMakeFiles/hyperparameter_optimization.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/hyperparameter_optimization.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/hyperparameter_optimization.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/hyperparameter_optimization.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/hyperparameter_optimization.dir/all: CMakeFiles/cartpole_lib.dir/all
+CMakeFiles/hyperparameter_optimization.dir/all: CMakeFiles/training_monitor_lib.dir/all
+CMakeFiles/hyperparameter_optimization.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/hyperparameter_optimization.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/hyperparameter_optimization.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/hyperparameter_optimization.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_optimization.dir/build.make CMakeFiles/hyperparameter_optimization.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_optimization.dir/build.make CMakeFiles/hyperparameter_optimization.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=13,14 "Built target hyperparameter_optimization"
+.PHONY : CMakeFiles/hyperparameter_optimization.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/hyperparameter_tuning.dir/rule: cmake_check_build_system
+CMakeFiles/hyperparameter_optimization.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 22
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hyperparameter_tuning.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hyperparameter_optimization.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
-.PHONY : CMakeFiles/hyperparameter_tuning.dir/rule
+.PHONY : CMakeFiles/hyperparameter_optimization.dir/rule
 
 # Convenience name for target.
-hyperparameter_tuning: CMakeFiles/hyperparameter_tuning.dir/rule
-.PHONY : hyperparameter_tuning
+hyperparameter_optimization: CMakeFiles/hyperparameter_optimization.dir/rule
+.PHONY : hyperparameter_optimization
 
 # codegen rule for target.
-CMakeFiles/hyperparameter_tuning.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_tuning.dir/build.make CMakeFiles/hyperparameter_tuning.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=11,12 "Finished codegen for target hyperparameter_tuning"
-.PHONY : CMakeFiles/hyperparameter_tuning.dir/codegen
+CMakeFiles/hyperparameter_optimization.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_optimization.dir/build.make CMakeFiles/hyperparameter_optimization.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=13,14 "Finished codegen for target hyperparameter_optimization"
+.PHONY : CMakeFiles/hyperparameter_optimization.dir/codegen
 
 # clean rule for target.
-CMakeFiles/hyperparameter_tuning.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_tuning.dir/build.make CMakeFiles/hyperparameter_tuning.dir/clean
-.PHONY : CMakeFiles/hyperparameter_tuning.dir/clean
+CMakeFiles/hyperparameter_optimization.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_optimization.dir/build.make CMakeFiles/hyperparameter_optimization.dir/clean
+.PHONY : CMakeFiles/hyperparameter_optimization.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/simple_hyperparameter_test.dir
+# Target rules for target CMakeFiles/phase1_configuration_tests.dir
 
 # All Build rule for target.
-CMakeFiles/simple_hyperparameter_test.dir/all: CMakeFiles/matrix_lib.dir/all
-CMakeFiles/simple_hyperparameter_test.dir/all: CMakeFiles/activation_lib.dir/all
-CMakeFiles/simple_hyperparameter_test.dir/all: CMakeFiles/dense_layer_lib.dir/all
-CMakeFiles/simple_hyperparameter_test.dir/all: CMakeFiles/neural_network_lib.dir/all
-CMakeFiles/simple_hyperparameter_test.dir/all: CMakeFiles/cartpole_lib.dir/all
-CMakeFiles/simple_hyperparameter_test.dir/all: CMakeFiles/training_monitor_lib.dir/all
-CMakeFiles/simple_hyperparameter_test.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
-CMakeFiles/simple_hyperparameter_test.dir/all: CMakeFiles/policy_network_lib.dir/all
-CMakeFiles/simple_hyperparameter_test.dir/all: CMakeFiles/value_network_lib.dir/all
-CMakeFiles/simple_hyperparameter_test.dir/all: CMakeFiles/ppo_agent_lib.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_hyperparameter_test.dir/build.make CMakeFiles/simple_hyperparameter_test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_hyperparameter_test.dir/build.make CMakeFiles/simple_hyperparameter_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=23,24 "Built target simple_hyperparameter_test"
-.PHONY : CMakeFiles/simple_hyperparameter_test.dir/all
+CMakeFiles/phase1_configuration_tests.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/phase1_configuration_tests.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/phase1_configuration_tests.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/phase1_configuration_tests.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/phase1_configuration_tests.dir/all: CMakeFiles/cartpole_lib.dir/all
+CMakeFiles/phase1_configuration_tests.dir/all: CMakeFiles/training_monitor_lib.dir/all
+CMakeFiles/phase1_configuration_tests.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/phase1_configuration_tests.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/phase1_configuration_tests.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/phase1_configuration_tests.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase1_configuration_tests.dir/build.make CMakeFiles/phase1_configuration_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase1_configuration_tests.dir/build.make CMakeFiles/phase1_configuration_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=23,24 "Built target phase1_configuration_tests"
+.PHONY : CMakeFiles/phase1_configuration_tests.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/simple_hyperparameter_test.dir/rule: cmake_check_build_system
+CMakeFiles/phase1_configuration_tests.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 22
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/simple_hyperparameter_test.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/phase1_configuration_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
-.PHONY : CMakeFiles/simple_hyperparameter_test.dir/rule
+.PHONY : CMakeFiles/phase1_configuration_tests.dir/rule
 
 # Convenience name for target.
-simple_hyperparameter_test: CMakeFiles/simple_hyperparameter_test.dir/rule
-.PHONY : simple_hyperparameter_test
+phase1_configuration_tests: CMakeFiles/phase1_configuration_tests.dir/rule
+.PHONY : phase1_configuration_tests
 
 # codegen rule for target.
-CMakeFiles/simple_hyperparameter_test.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_hyperparameter_test.dir/build.make CMakeFiles/simple_hyperparameter_test.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=23,24 "Finished codegen for target simple_hyperparameter_test"
-.PHONY : CMakeFiles/simple_hyperparameter_test.dir/codegen
+CMakeFiles/phase1_configuration_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase1_configuration_tests.dir/build.make CMakeFiles/phase1_configuration_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=23,24 "Finished codegen for target phase1_configuration_tests"
+.PHONY : CMakeFiles/phase1_configuration_tests.dir/codegen
 
 # clean rule for target.
-CMakeFiles/simple_hyperparameter_test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_hyperparameter_test.dir/build.make CMakeFiles/simple_hyperparameter_test.dir/clean
-.PHONY : CMakeFiles/simple_hyperparameter_test.dir/clean
+CMakeFiles/phase1_configuration_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase1_configuration_tests.dir/build.make CMakeFiles/phase1_configuration_tests.dir/clean
+.PHONY : CMakeFiles/phase1_configuration_tests.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/fixed_ppo_training.dir
+# Target rules for target CMakeFiles/phase2_advanced_tuning.dir
 
 # All Build rule for target.
-CMakeFiles/fixed_ppo_training.dir/all: CMakeFiles/matrix_lib.dir/all
-CMakeFiles/fixed_ppo_training.dir/all: CMakeFiles/activation_lib.dir/all
-CMakeFiles/fixed_ppo_training.dir/all: CMakeFiles/dense_layer_lib.dir/all
-CMakeFiles/fixed_ppo_training.dir/all: CMakeFiles/neural_network_lib.dir/all
-CMakeFiles/fixed_ppo_training.dir/all: CMakeFiles/cartpole_lib.dir/all
-CMakeFiles/fixed_ppo_training.dir/all: CMakeFiles/training_monitor_lib.dir/all
-CMakeFiles/fixed_ppo_training.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
-CMakeFiles/fixed_ppo_training.dir/all: CMakeFiles/policy_network_lib.dir/all
-CMakeFiles/fixed_ppo_training.dir/all: CMakeFiles/value_network_lib.dir/all
-CMakeFiles/fixed_ppo_training.dir/all: CMakeFiles/ppo_agent_lib.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fixed_ppo_training.dir/build.make CMakeFiles/fixed_ppo_training.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fixed_ppo_training.dir/build.make CMakeFiles/fixed_ppo_training.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=9,10 "Built target fixed_ppo_training"
-.PHONY : CMakeFiles/fixed_ppo_training.dir/all
+CMakeFiles/phase2_advanced_tuning.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/phase2_advanced_tuning.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/phase2_advanced_tuning.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/phase2_advanced_tuning.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/phase2_advanced_tuning.dir/all: CMakeFiles/cartpole_lib.dir/all
+CMakeFiles/phase2_advanced_tuning.dir/all: CMakeFiles/training_monitor_lib.dir/all
+CMakeFiles/phase2_advanced_tuning.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/phase2_advanced_tuning.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/phase2_advanced_tuning.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/phase2_advanced_tuning.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_advanced_tuning.dir/build.make CMakeFiles/phase2_advanced_tuning.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_advanced_tuning.dir/build.make CMakeFiles/phase2_advanced_tuning.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=25,26 "Built target phase2_advanced_tuning"
+.PHONY : CMakeFiles/phase2_advanced_tuning.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/fixed_ppo_training.dir/rule: cmake_check_build_system
+CMakeFiles/phase2_advanced_tuning.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 22
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/fixed_ppo_training.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/phase2_advanced_tuning.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
-.PHONY : CMakeFiles/fixed_ppo_training.dir/rule
+.PHONY : CMakeFiles/phase2_advanced_tuning.dir/rule
 
 # Convenience name for target.
-fixed_ppo_training: CMakeFiles/fixed_ppo_training.dir/rule
-.PHONY : fixed_ppo_training
+phase2_advanced_tuning: CMakeFiles/phase2_advanced_tuning.dir/rule
+.PHONY : phase2_advanced_tuning
 
 # codegen rule for target.
-CMakeFiles/fixed_ppo_training.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fixed_ppo_training.dir/build.make CMakeFiles/fixed_ppo_training.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=9,10 "Finished codegen for target fixed_ppo_training"
-.PHONY : CMakeFiles/fixed_ppo_training.dir/codegen
+CMakeFiles/phase2_advanced_tuning.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_advanced_tuning.dir/build.make CMakeFiles/phase2_advanced_tuning.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=25,26 "Finished codegen for target phase2_advanced_tuning"
+.PHONY : CMakeFiles/phase2_advanced_tuning.dir/codegen
 
 # clean rule for target.
-CMakeFiles/fixed_ppo_training.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fixed_ppo_training.dir/build.make CMakeFiles/fixed_ppo_training.dir/clean
-.PHONY : CMakeFiles/fixed_ppo_training.dir/clean
+CMakeFiles/phase2_advanced_tuning.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_advanced_tuning.dir/build.make CMakeFiles/phase2_advanced_tuning.dir/clean
+.PHONY : CMakeFiles/phase2_advanced_tuning.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/simple_phase2_test.dir
+
+# All Build rule for target.
+CMakeFiles/simple_phase2_test.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/simple_phase2_test.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/simple_phase2_test.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/simple_phase2_test.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/simple_phase2_test.dir/all: CMakeFiles/cartpole_lib.dir/all
+CMakeFiles/simple_phase2_test.dir/all: CMakeFiles/training_monitor_lib.dir/all
+CMakeFiles/simple_phase2_test.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/simple_phase2_test.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/simple_phase2_test.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/simple_phase2_test.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_phase2_test.dir/build.make CMakeFiles/simple_phase2_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_phase2_test.dir/build.make CMakeFiles/simple_phase2_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=35,36 "Built target simple_phase2_test"
+.PHONY : CMakeFiles/simple_phase2_test.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/simple_phase2_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 22
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/simple_phase2_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
+.PHONY : CMakeFiles/simple_phase2_test.dir/rule
+
+# Convenience name for target.
+simple_phase2_test: CMakeFiles/simple_phase2_test.dir/rule
+.PHONY : simple_phase2_test
+
+# codegen rule for target.
+CMakeFiles/simple_phase2_test.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_phase2_test.dir/build.make CMakeFiles/simple_phase2_test.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=35,36 "Finished codegen for target simple_phase2_test"
+.PHONY : CMakeFiles/simple_phase2_test.dir/codegen
+
+# clean rule for target.
+CMakeFiles/simple_phase2_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_phase2_test.dir/build.make CMakeFiles/simple_phase2_test.dir/clean
+.PHONY : CMakeFiles/simple_phase2_test.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/stability_analysis_test.dir
+
+# All Build rule for target.
+CMakeFiles/stability_analysis_test.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/stability_analysis_test.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/stability_analysis_test.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/stability_analysis_test.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/stability_analysis_test.dir/all: CMakeFiles/cartpole_lib.dir/all
+CMakeFiles/stability_analysis_test.dir/all: CMakeFiles/training_monitor_lib.dir/all
+CMakeFiles/stability_analysis_test.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/stability_analysis_test.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/stability_analysis_test.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/stability_analysis_test.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stability_analysis_test.dir/build.make CMakeFiles/stability_analysis_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stability_analysis_test.dir/build.make CMakeFiles/stability_analysis_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=37,38 "Built target stability_analysis_test"
+.PHONY : CMakeFiles/stability_analysis_test.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/stability_analysis_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 22
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/stability_analysis_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
+.PHONY : CMakeFiles/stability_analysis_test.dir/rule
+
+# Convenience name for target.
+stability_analysis_test: CMakeFiles/stability_analysis_test.dir/rule
+.PHONY : stability_analysis_test
+
+# codegen rule for target.
+CMakeFiles/stability_analysis_test.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stability_analysis_test.dir/build.make CMakeFiles/stability_analysis_test.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=37,38 "Finished codegen for target stability_analysis_test"
+.PHONY : CMakeFiles/stability_analysis_test.dir/codegen
+
+# clean rule for target.
+CMakeFiles/stability_analysis_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stability_analysis_test.dir/build.make CMakeFiles/stability_analysis_test.dir/clean
+.PHONY : CMakeFiles/stability_analysis_test.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/optimal_config_validation.dir
+
+# All Build rule for target.
+CMakeFiles/optimal_config_validation.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/optimal_config_validation.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/optimal_config_validation.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/optimal_config_validation.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/optimal_config_validation.dir/all: CMakeFiles/cartpole_lib.dir/all
+CMakeFiles/optimal_config_validation.dir/all: CMakeFiles/training_monitor_lib.dir/all
+CMakeFiles/optimal_config_validation.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/optimal_config_validation.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/optimal_config_validation.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/optimal_config_validation.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimal_config_validation.dir/build.make CMakeFiles/optimal_config_validation.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimal_config_validation.dir/build.make CMakeFiles/optimal_config_validation.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=19,20 "Built target optimal_config_validation"
+.PHONY : CMakeFiles/optimal_config_validation.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/optimal_config_validation.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 22
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/optimal_config_validation.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
+.PHONY : CMakeFiles/optimal_config_validation.dir/rule
+
+# Convenience name for target.
+optimal_config_validation: CMakeFiles/optimal_config_validation.dir/rule
+.PHONY : optimal_config_validation
+
+# codegen rule for target.
+CMakeFiles/optimal_config_validation.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimal_config_validation.dir/build.make CMakeFiles/optimal_config_validation.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=19,20 "Finished codegen for target optimal_config_validation"
+.PHONY : CMakeFiles/optimal_config_validation.dir/codegen
+
+# clean rule for target.
+CMakeFiles/optimal_config_validation.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimal_config_validation.dir/build.make CMakeFiles/optimal_config_validation.dir/clean
+.PHONY : CMakeFiles/optimal_config_validation.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/enhanced_visual_training.dir
+
+# All Build rule for target.
+CMakeFiles/enhanced_visual_training.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/enhanced_visual_training.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/enhanced_visual_training.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/enhanced_visual_training.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/enhanced_visual_training.dir/all: CMakeFiles/cartpole_lib.dir/all
+CMakeFiles/enhanced_visual_training.dir/all: CMakeFiles/training_monitor_lib.dir/all
+CMakeFiles/enhanced_visual_training.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/enhanced_visual_training.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/enhanced_visual_training.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/enhanced_visual_training.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/enhanced_visual_training.dir/build.make CMakeFiles/enhanced_visual_training.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/enhanced_visual_training.dir/build.make CMakeFiles/enhanced_visual_training.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=9,10 "Built target enhanced_visual_training"
+.PHONY : CMakeFiles/enhanced_visual_training.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/enhanced_visual_training.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 22
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/enhanced_visual_training.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
+.PHONY : CMakeFiles/enhanced_visual_training.dir/rule
+
+# Convenience name for target.
+enhanced_visual_training: CMakeFiles/enhanced_visual_training.dir/rule
+.PHONY : enhanced_visual_training
+
+# codegen rule for target.
+CMakeFiles/enhanced_visual_training.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/enhanced_visual_training.dir/build.make CMakeFiles/enhanced_visual_training.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=9,10 "Finished codegen for target enhanced_visual_training"
+.PHONY : CMakeFiles/enhanced_visual_training.dir/codegen
+
+# clean rule for target.
+CMakeFiles/enhanced_visual_training.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/enhanced_visual_training.dir/build.make CMakeFiles/enhanced_visual_training.dir/clean
+.PHONY : CMakeFiles/enhanced_visual_training.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/final_visual_training.dir
+
+# All Build rule for target.
+CMakeFiles/final_visual_training.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/final_visual_training.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/final_visual_training.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/final_visual_training.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/final_visual_training.dir/all: CMakeFiles/cartpole_lib.dir/all
+CMakeFiles/final_visual_training.dir/all: CMakeFiles/training_monitor_lib.dir/all
+CMakeFiles/final_visual_training.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/final_visual_training.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/final_visual_training.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/final_visual_training.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/final_visual_training.dir/build.make CMakeFiles/final_visual_training.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/final_visual_training.dir/build.make CMakeFiles/final_visual_training.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=11,12 "Built target final_visual_training"
+.PHONY : CMakeFiles/final_visual_training.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/final_visual_training.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 22
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/final_visual_training.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
+.PHONY : CMakeFiles/final_visual_training.dir/rule
+
+# Convenience name for target.
+final_visual_training: CMakeFiles/final_visual_training.dir/rule
+.PHONY : final_visual_training
+
+# codegen rule for target.
+CMakeFiles/final_visual_training.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/final_visual_training.dir/build.make CMakeFiles/final_visual_training.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=11,12 "Finished codegen for target final_visual_training"
+.PHONY : CMakeFiles/final_visual_training.dir/codegen
+
+# clean rule for target.
+CMakeFiles/final_visual_training.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/final_visual_training.dir/build.make CMakeFiles/final_visual_training.dir/clean
+.PHONY : CMakeFiles/final_visual_training.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/optimized_ppo_training.dir
+
+# All Build rule for target.
+CMakeFiles/optimized_ppo_training.dir/all: CMakeFiles/matrix_lib.dir/all
+CMakeFiles/optimized_ppo_training.dir/all: CMakeFiles/activation_lib.dir/all
+CMakeFiles/optimized_ppo_training.dir/all: CMakeFiles/dense_layer_lib.dir/all
+CMakeFiles/optimized_ppo_training.dir/all: CMakeFiles/neural_network_lib.dir/all
+CMakeFiles/optimized_ppo_training.dir/all: CMakeFiles/cartpole_lib.dir/all
+CMakeFiles/optimized_ppo_training.dir/all: CMakeFiles/training_monitor_lib.dir/all
+CMakeFiles/optimized_ppo_training.dir/all: CMakeFiles/ppo_buffer_lib.dir/all
+CMakeFiles/optimized_ppo_training.dir/all: CMakeFiles/policy_network_lib.dir/all
+CMakeFiles/optimized_ppo_training.dir/all: CMakeFiles/value_network_lib.dir/all
+CMakeFiles/optimized_ppo_training.dir/all: CMakeFiles/ppo_agent_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_ppo_training.dir/build.make CMakeFiles/optimized_ppo_training.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_ppo_training.dir/build.make CMakeFiles/optimized_ppo_training.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=21,22 "Built target optimized_ppo_training"
+.PHONY : CMakeFiles/optimized_ppo_training.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/optimized_ppo_training.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 22
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/optimized_ppo_training.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/m34555/Developing/cpp_ppo/build/CMakeFiles 0
+.PHONY : CMakeFiles/optimized_ppo_training.dir/rule
+
+# Convenience name for target.
+optimized_ppo_training: CMakeFiles/optimized_ppo_training.dir/rule
+.PHONY : optimized_ppo_training
+
+# codegen rule for target.
+CMakeFiles/optimized_ppo_training.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_ppo_training.dir/build.make CMakeFiles/optimized_ppo_training.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/m34555/Developing/cpp_ppo/build/CMakeFiles --progress-num=21,22 "Finished codegen for target optimized_ppo_training"
+.PHONY : CMakeFiles/optimized_ppo_training.dir/codegen
+
+# clean rule for target.
+CMakeFiles/optimized_ppo_training.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_ppo_training.dir/build.make CMakeFiles/optimized_ppo_training.dir/clean
+.PHONY : CMakeFiles/optimized_ppo_training.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

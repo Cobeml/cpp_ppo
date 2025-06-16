@@ -312,6 +312,134 @@ void TrainingMonitor::display_live_update() const {
     display_summary();
 }
 
+void TrainingMonitor::display_training_curves() const {
+    std::lock_guard<std::mutex> lock(metrics_mutex);
+    
+    std::cout << "\n";
+    if (use_color) std::cout << Visualization::Color::BOLD << Visualization::Color::CYAN;
+    std::cout << "+===========================================================================+\n";
+    std::cout << "|                        TRAINING PROGRESSION CURVES                        |\n";
+    std::cout << "+===========================================================================+\n";
+    if (use_color) std::cout << Visualization::Color::RESET;
+    
+    // Reward progression over time
+    if (metrics.at("reward").values.size() > 10) {
+        auto reward_data = metrics.at("reward").get_recent(std::min(size_t(100), metrics.at("reward").values.size()));
+        std::cout << "\n" << create_ascii_graph(reward_data, 70, 8, "Reward Progression Over Time") << "\n";
+        
+        // Reward sparkline for compact view
+        std::cout << "Reward Trend: " << Visualization::create_sparkline(reward_data, 60) << "\n";
+        
+        // Moving averages
+        std::vector<double> moving_avg_10, moving_avg_50;
+        for (size_t i = 9; i < reward_data.size(); ++i) {
+            double sum = 0;
+            for (size_t j = i - 9; j <= i; ++j) sum += reward_data[j];
+            moving_avg_10.push_back(sum / 10.0);
+        }
+        
+        if (reward_data.size() >= 50) {
+            for (size_t i = 49; i < reward_data.size(); ++i) {
+                double sum = 0;
+                for (size_t j = i - 49; j <= i; ++j) sum += reward_data[j];
+                moving_avg_50.push_back(sum / 50.0);
+            }
+            std::cout << "10-Episode MA: " << Visualization::create_sparkline(moving_avg_10, 60) << "\n";
+            std::cout << "50-Episode MA: " << Visualization::create_sparkline(moving_avg_50, 60) << "\n";
+        }
+    }
+    
+    // Success rate progression over time
+    if (metrics.at("success").values.size() > 10) {
+        auto success_data = metrics.at("success").get_recent(std::min(size_t(100), metrics.at("success").values.size()));
+        
+        // Convert to percentage and create rolling success rate
+        std::vector<double> success_rate_progression;
+        for (size_t i = 9; i < success_data.size(); ++i) {
+            double sum = 0;
+            for (size_t j = i - 9; j <= i; ++j) sum += success_data[j];
+            success_rate_progression.push_back((sum / 10.0) * 100.0); // Convert to percentage
+        }
+        
+        if (!success_rate_progression.empty()) {
+            std::cout << "\n" << create_ascii_graph(success_rate_progression, 70, 6, "Success Rate Progression (10-Episode Rolling Average)") << "\n";
+            std::cout << "Success Trend: " << Visualization::create_sparkline(success_rate_progression, 60) << "\n";
+        }
+    }
+    
+    // Episode length progression
+    if (metrics.at("episode_length").values.size() > 10) {
+        auto length_data = metrics.at("episode_length").get_recent(std::min(size_t(100), metrics.at("episode_length").values.size()));
+        std::cout << "\n" << create_ascii_graph(length_data, 70, 6, "Episode Length Progression") << "\n";
+        std::cout << "Length Trend: " << Visualization::create_sparkline(length_data, 60) << "\n";
+    }
+    
+    // Loss progression (if available)
+    if (metrics.at("policy_loss").values.size() > 5) {
+        auto policy_loss_data = metrics.at("policy_loss").get_recent(std::min(size_t(50), metrics.at("policy_loss").values.size()));
+        auto value_loss_data = metrics.at("value_loss").get_recent(std::min(size_t(50), metrics.at("value_loss").values.size()));
+        
+        std::cout << "\n" << create_ascii_graph(policy_loss_data, 70, 6, "Policy Loss Progression") << "\n";
+        std::cout << "Policy Loss:  " << Visualization::create_sparkline(policy_loss_data, 60) << "\n";
+        std::cout << "Value Loss:   " << Visualization::create_sparkline(value_loss_data, 60) << "\n";
+    }
+    
+    // Performance summary with trend indicators
+    std::cout << "\n[*] Trend Analysis:\n";
+    
+    if (metrics.at("reward").values.size() >= 20) {
+        auto recent_rewards = metrics.at("reward").get_recent(10);
+        auto earlier_rewards = std::vector<double>(
+            metrics.at("reward").values.end() - 20,
+            metrics.at("reward").values.end() - 10
+        );
+        
+        double recent_avg = std::accumulate(recent_rewards.begin(), recent_rewards.end(), 0.0) / recent_rewards.size();
+        double earlier_avg = std::accumulate(earlier_rewards.begin(), earlier_rewards.end(), 0.0) / earlier_rewards.size();
+        double reward_trend = recent_avg - earlier_avg;
+        
+        std::cout << "|- Reward Trend: ";
+        if (reward_trend > 0.1) {
+            if (use_color) std::cout << Visualization::Color::GREEN;
+            std::cout << "↗ IMPROVING";
+        } else if (reward_trend < -0.1) {
+            if (use_color) std::cout << Visualization::Color::RED;
+            std::cout << "↘ DECLINING";
+        } else {
+            if (use_color) std::cout << Visualization::Color::YELLOW;
+            std::cout << "→ STABLE";
+        }
+        if (use_color) std::cout << Visualization::Color::RESET;
+        std::cout << " (" << std::fixed << std::setprecision(2) << reward_trend << ")\n";
+    }
+    
+    if (metrics.at("success").values.size() >= 20) {
+        auto recent_success = metrics.at("success").get_recent(10);
+        auto earlier_success = std::vector<double>(
+            metrics.at("success").values.end() - 20,
+            metrics.at("success").values.end() - 10
+        );
+        
+        double recent_rate = std::accumulate(recent_success.begin(), recent_success.end(), 0.0) / recent_success.size();
+        double earlier_rate = std::accumulate(earlier_success.begin(), earlier_success.end(), 0.0) / earlier_success.size();
+        double success_trend = recent_rate - earlier_rate;
+        
+        std::cout << "+- Success Trend: ";
+        if (success_trend > 0.05) {
+            if (use_color) std::cout << Visualization::Color::GREEN;
+            std::cout << "↗ IMPROVING";
+        } else if (success_trend < -0.05) {
+            if (use_color) std::cout << Visualization::Color::RED;
+            std::cout << "↘ DECLINING";
+        } else {
+            if (use_color) std::cout << Visualization::Color::YELLOW;
+            std::cout << "→ STABLE";
+        }
+        if (use_color) std::cout << Visualization::Color::RESET;
+        std::cout << " (" << std::fixed << std::setprecision(1) << (success_trend * 100) << "%)\n";
+    }
+}
+
 double TrainingMonitor::get_average_reward(size_t last_n) const {
     auto recent = metrics.at("reward").get_recent(last_n);
     if (recent.empty()) return 0.0;

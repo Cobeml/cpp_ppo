@@ -205,6 +205,19 @@ training_monitor_lib/fast:
 .PHONY : training_monitor_lib/fast
 
 #=============================================================================
+# Target rules for targets named ppo_debugger_lib
+
+# Build rule for target.
+ppo_debugger_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ppo_debugger_lib
+.PHONY : ppo_debugger_lib
+
+# fast build rule for target.
+ppo_debugger_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_debugger_lib.dir/build.make CMakeFiles/ppo_debugger_lib.dir/build
+.PHONY : ppo_debugger_lib/fast
+
+#=============================================================================
 # Target rules for targets named ppo_buffer_lib
 
 # Build rule for target.
@@ -387,226 +400,400 @@ test_ppo_agent/fast:
 .PHONY : test_ppo_agent/fast
 
 #=============================================================================
-# Target rules for targets named visualization_demo
+# Target rules for targets named test_gradient_computation
 
 # Build rule for target.
-visualization_demo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 visualization_demo
-.PHONY : visualization_demo
+test_gradient_computation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_gradient_computation
+.PHONY : test_gradient_computation
 
 # fast build rule for target.
-visualization_demo/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/build
-.PHONY : visualization_demo/fast
+test_gradient_computation/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_gradient_computation.dir/build.make CMakeFiles/test_gradient_computation.dir/build
+.PHONY : test_gradient_computation/fast
 
 #=============================================================================
-# Target rules for targets named basic_ppo_training
+# Target rules for targets named test_value_function_stability
 
 # Build rule for target.
-basic_ppo_training: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 basic_ppo_training
-.PHONY : basic_ppo_training
+test_value_function_stability: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_value_function_stability
+.PHONY : test_value_function_stability
 
 # fast build rule for target.
-basic_ppo_training/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/build
-.PHONY : basic_ppo_training/fast
+test_value_function_stability/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_function_stability.dir/build.make CMakeFiles/test_value_function_stability.dir/build
+.PHONY : test_value_function_stability/fast
 
 #=============================================================================
-# Target rules for targets named tuned_ppo_training
+# Target rules for targets named diagnostic_ppo_training
 
 # Build rule for target.
-tuned_ppo_training: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tuned_ppo_training
-.PHONY : tuned_ppo_training
+diagnostic_ppo_training: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 diagnostic_ppo_training
+.PHONY : diagnostic_ppo_training
 
 # fast build rule for target.
-tuned_ppo_training/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tuned_ppo_training.dir/build.make CMakeFiles/tuned_ppo_training.dir/build
-.PHONY : tuned_ppo_training/fast
+diagnostic_ppo_training/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagnostic_ppo_training.dir/build.make CMakeFiles/diagnostic_ppo_training.dir/build
+.PHONY : diagnostic_ppo_training/fast
 
 #=============================================================================
-# Target rules for targets named hyperparameter_tuning
+# Target rules for targets named hyperparameter_optimization
 
 # Build rule for target.
-hyperparameter_tuning: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hyperparameter_tuning
-.PHONY : hyperparameter_tuning
+hyperparameter_optimization: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hyperparameter_optimization
+.PHONY : hyperparameter_optimization
 
 # fast build rule for target.
-hyperparameter_tuning/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_tuning.dir/build.make CMakeFiles/hyperparameter_tuning.dir/build
-.PHONY : hyperparameter_tuning/fast
+hyperparameter_optimization/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_optimization.dir/build.make CMakeFiles/hyperparameter_optimization.dir/build
+.PHONY : hyperparameter_optimization/fast
 
 #=============================================================================
-# Target rules for targets named simple_hyperparameter_test
+# Target rules for targets named phase1_configuration_tests
 
 # Build rule for target.
-simple_hyperparameter_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_hyperparameter_test
-.PHONY : simple_hyperparameter_test
+phase1_configuration_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 phase1_configuration_tests
+.PHONY : phase1_configuration_tests
 
 # fast build rule for target.
-simple_hyperparameter_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_hyperparameter_test.dir/build.make CMakeFiles/simple_hyperparameter_test.dir/build
-.PHONY : simple_hyperparameter_test/fast
+phase1_configuration_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase1_configuration_tests.dir/build.make CMakeFiles/phase1_configuration_tests.dir/build
+.PHONY : phase1_configuration_tests/fast
 
 #=============================================================================
-# Target rules for targets named fixed_ppo_training
+# Target rules for targets named phase2_advanced_tuning
 
 # Build rule for target.
-fixed_ppo_training: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fixed_ppo_training
-.PHONY : fixed_ppo_training
+phase2_advanced_tuning: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 phase2_advanced_tuning
+.PHONY : phase2_advanced_tuning
 
 # fast build rule for target.
-fixed_ppo_training/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fixed_ppo_training.dir/build.make CMakeFiles/fixed_ppo_training.dir/build
-.PHONY : fixed_ppo_training/fast
+phase2_advanced_tuning/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_advanced_tuning.dir/build.make CMakeFiles/phase2_advanced_tuning.dir/build
+.PHONY : phase2_advanced_tuning/fast
 
-examples/basic_ppo_training.o: examples/basic_ppo_training.cpp.o
-.PHONY : examples/basic_ppo_training.o
+#=============================================================================
+# Target rules for targets named simple_phase2_test
 
-# target to build an object file
-examples/basic_ppo_training.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/examples/basic_ppo_training.cpp.o
-.PHONY : examples/basic_ppo_training.cpp.o
+# Build rule for target.
+simple_phase2_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_phase2_test
+.PHONY : simple_phase2_test
 
-examples/basic_ppo_training.i: examples/basic_ppo_training.cpp.i
-.PHONY : examples/basic_ppo_training.i
+# fast build rule for target.
+simple_phase2_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_phase2_test.dir/build.make CMakeFiles/simple_phase2_test.dir/build
+.PHONY : simple_phase2_test/fast
 
-# target to preprocess a source file
-examples/basic_ppo_training.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/examples/basic_ppo_training.cpp.i
-.PHONY : examples/basic_ppo_training.cpp.i
+#=============================================================================
+# Target rules for targets named stability_analysis_test
 
-examples/basic_ppo_training.s: examples/basic_ppo_training.cpp.s
-.PHONY : examples/basic_ppo_training.s
+# Build rule for target.
+stability_analysis_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stability_analysis_test
+.PHONY : stability_analysis_test
 
-# target to generate assembly for a file
-examples/basic_ppo_training.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_ppo_training.dir/build.make CMakeFiles/basic_ppo_training.dir/examples/basic_ppo_training.cpp.s
-.PHONY : examples/basic_ppo_training.cpp.s
+# fast build rule for target.
+stability_analysis_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stability_analysis_test.dir/build.make CMakeFiles/stability_analysis_test.dir/build
+.PHONY : stability_analysis_test/fast
 
-examples/fixed_ppo_training.o: examples/fixed_ppo_training.cpp.o
-.PHONY : examples/fixed_ppo_training.o
+#=============================================================================
+# Target rules for targets named optimal_config_validation
 
-# target to build an object file
-examples/fixed_ppo_training.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fixed_ppo_training.dir/build.make CMakeFiles/fixed_ppo_training.dir/examples/fixed_ppo_training.cpp.o
-.PHONY : examples/fixed_ppo_training.cpp.o
+# Build rule for target.
+optimal_config_validation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 optimal_config_validation
+.PHONY : optimal_config_validation
 
-examples/fixed_ppo_training.i: examples/fixed_ppo_training.cpp.i
-.PHONY : examples/fixed_ppo_training.i
+# fast build rule for target.
+optimal_config_validation/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimal_config_validation.dir/build.make CMakeFiles/optimal_config_validation.dir/build
+.PHONY : optimal_config_validation/fast
 
-# target to preprocess a source file
-examples/fixed_ppo_training.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fixed_ppo_training.dir/build.make CMakeFiles/fixed_ppo_training.dir/examples/fixed_ppo_training.cpp.i
-.PHONY : examples/fixed_ppo_training.cpp.i
+#=============================================================================
+# Target rules for targets named enhanced_visual_training
 
-examples/fixed_ppo_training.s: examples/fixed_ppo_training.cpp.s
-.PHONY : examples/fixed_ppo_training.s
+# Build rule for target.
+enhanced_visual_training: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 enhanced_visual_training
+.PHONY : enhanced_visual_training
 
-# target to generate assembly for a file
-examples/fixed_ppo_training.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fixed_ppo_training.dir/build.make CMakeFiles/fixed_ppo_training.dir/examples/fixed_ppo_training.cpp.s
-.PHONY : examples/fixed_ppo_training.cpp.s
+# fast build rule for target.
+enhanced_visual_training/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/enhanced_visual_training.dir/build.make CMakeFiles/enhanced_visual_training.dir/build
+.PHONY : enhanced_visual_training/fast
 
-examples/hyperparameter_tuning.o: examples/hyperparameter_tuning.cpp.o
-.PHONY : examples/hyperparameter_tuning.o
+#=============================================================================
+# Target rules for targets named final_visual_training
 
-# target to build an object file
-examples/hyperparameter_tuning.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_tuning.dir/build.make CMakeFiles/hyperparameter_tuning.dir/examples/hyperparameter_tuning.cpp.o
-.PHONY : examples/hyperparameter_tuning.cpp.o
+# Build rule for target.
+final_visual_training: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 final_visual_training
+.PHONY : final_visual_training
 
-examples/hyperparameter_tuning.i: examples/hyperparameter_tuning.cpp.i
-.PHONY : examples/hyperparameter_tuning.i
+# fast build rule for target.
+final_visual_training/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/final_visual_training.dir/build.make CMakeFiles/final_visual_training.dir/build
+.PHONY : final_visual_training/fast
 
-# target to preprocess a source file
-examples/hyperparameter_tuning.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_tuning.dir/build.make CMakeFiles/hyperparameter_tuning.dir/examples/hyperparameter_tuning.cpp.i
-.PHONY : examples/hyperparameter_tuning.cpp.i
+#=============================================================================
+# Target rules for targets named optimized_ppo_training
 
-examples/hyperparameter_tuning.s: examples/hyperparameter_tuning.cpp.s
-.PHONY : examples/hyperparameter_tuning.s
+# Build rule for target.
+optimized_ppo_training: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 optimized_ppo_training
+.PHONY : optimized_ppo_training
 
-# target to generate assembly for a file
-examples/hyperparameter_tuning.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_tuning.dir/build.make CMakeFiles/hyperparameter_tuning.dir/examples/hyperparameter_tuning.cpp.s
-.PHONY : examples/hyperparameter_tuning.cpp.s
+# fast build rule for target.
+optimized_ppo_training/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_ppo_training.dir/build.make CMakeFiles/optimized_ppo_training.dir/build
+.PHONY : optimized_ppo_training/fast
 
-examples/simple_hyperparameter_test.o: examples/simple_hyperparameter_test.cpp.o
-.PHONY : examples/simple_hyperparameter_test.o
-
-# target to build an object file
-examples/simple_hyperparameter_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_hyperparameter_test.dir/build.make CMakeFiles/simple_hyperparameter_test.dir/examples/simple_hyperparameter_test.cpp.o
-.PHONY : examples/simple_hyperparameter_test.cpp.o
-
-examples/simple_hyperparameter_test.i: examples/simple_hyperparameter_test.cpp.i
-.PHONY : examples/simple_hyperparameter_test.i
-
-# target to preprocess a source file
-examples/simple_hyperparameter_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_hyperparameter_test.dir/build.make CMakeFiles/simple_hyperparameter_test.dir/examples/simple_hyperparameter_test.cpp.i
-.PHONY : examples/simple_hyperparameter_test.cpp.i
-
-examples/simple_hyperparameter_test.s: examples/simple_hyperparameter_test.cpp.s
-.PHONY : examples/simple_hyperparameter_test.s
-
-# target to generate assembly for a file
-examples/simple_hyperparameter_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_hyperparameter_test.dir/build.make CMakeFiles/simple_hyperparameter_test.dir/examples/simple_hyperparameter_test.cpp.s
-.PHONY : examples/simple_hyperparameter_test.cpp.s
-
-examples/tuned_ppo_training.o: examples/tuned_ppo_training.cpp.o
-.PHONY : examples/tuned_ppo_training.o
+examples/diagnostic_ppo_training.o: examples/diagnostic_ppo_training.cpp.o
+.PHONY : examples/diagnostic_ppo_training.o
 
 # target to build an object file
-examples/tuned_ppo_training.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tuned_ppo_training.dir/build.make CMakeFiles/tuned_ppo_training.dir/examples/tuned_ppo_training.cpp.o
-.PHONY : examples/tuned_ppo_training.cpp.o
+examples/diagnostic_ppo_training.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagnostic_ppo_training.dir/build.make CMakeFiles/diagnostic_ppo_training.dir/examples/diagnostic_ppo_training.cpp.o
+.PHONY : examples/diagnostic_ppo_training.cpp.o
 
-examples/tuned_ppo_training.i: examples/tuned_ppo_training.cpp.i
-.PHONY : examples/tuned_ppo_training.i
+examples/diagnostic_ppo_training.i: examples/diagnostic_ppo_training.cpp.i
+.PHONY : examples/diagnostic_ppo_training.i
 
 # target to preprocess a source file
-examples/tuned_ppo_training.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tuned_ppo_training.dir/build.make CMakeFiles/tuned_ppo_training.dir/examples/tuned_ppo_training.cpp.i
-.PHONY : examples/tuned_ppo_training.cpp.i
+examples/diagnostic_ppo_training.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagnostic_ppo_training.dir/build.make CMakeFiles/diagnostic_ppo_training.dir/examples/diagnostic_ppo_training.cpp.i
+.PHONY : examples/diagnostic_ppo_training.cpp.i
 
-examples/tuned_ppo_training.s: examples/tuned_ppo_training.cpp.s
-.PHONY : examples/tuned_ppo_training.s
+examples/diagnostic_ppo_training.s: examples/diagnostic_ppo_training.cpp.s
+.PHONY : examples/diagnostic_ppo_training.s
 
 # target to generate assembly for a file
-examples/tuned_ppo_training.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tuned_ppo_training.dir/build.make CMakeFiles/tuned_ppo_training.dir/examples/tuned_ppo_training.cpp.s
-.PHONY : examples/tuned_ppo_training.cpp.s
+examples/diagnostic_ppo_training.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/diagnostic_ppo_training.dir/build.make CMakeFiles/diagnostic_ppo_training.dir/examples/diagnostic_ppo_training.cpp.s
+.PHONY : examples/diagnostic_ppo_training.cpp.s
 
-examples/visualization_demo.o: examples/visualization_demo.cpp.o
-.PHONY : examples/visualization_demo.o
+examples/enhanced_visual_training.o: examples/enhanced_visual_training.cpp.o
+.PHONY : examples/enhanced_visual_training.o
 
 # target to build an object file
-examples/visualization_demo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/examples/visualization_demo.cpp.o
-.PHONY : examples/visualization_demo.cpp.o
+examples/enhanced_visual_training.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/enhanced_visual_training.dir/build.make CMakeFiles/enhanced_visual_training.dir/examples/enhanced_visual_training.cpp.o
+.PHONY : examples/enhanced_visual_training.cpp.o
 
-examples/visualization_demo.i: examples/visualization_demo.cpp.i
-.PHONY : examples/visualization_demo.i
+examples/enhanced_visual_training.i: examples/enhanced_visual_training.cpp.i
+.PHONY : examples/enhanced_visual_training.i
 
 # target to preprocess a source file
-examples/visualization_demo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/examples/visualization_demo.cpp.i
-.PHONY : examples/visualization_demo.cpp.i
+examples/enhanced_visual_training.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/enhanced_visual_training.dir/build.make CMakeFiles/enhanced_visual_training.dir/examples/enhanced_visual_training.cpp.i
+.PHONY : examples/enhanced_visual_training.cpp.i
 
-examples/visualization_demo.s: examples/visualization_demo.cpp.s
-.PHONY : examples/visualization_demo.s
+examples/enhanced_visual_training.s: examples/enhanced_visual_training.cpp.s
+.PHONY : examples/enhanced_visual_training.s
 
 # target to generate assembly for a file
-examples/visualization_demo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualization_demo.dir/build.make CMakeFiles/visualization_demo.dir/examples/visualization_demo.cpp.s
-.PHONY : examples/visualization_demo.cpp.s
+examples/enhanced_visual_training.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/enhanced_visual_training.dir/build.make CMakeFiles/enhanced_visual_training.dir/examples/enhanced_visual_training.cpp.s
+.PHONY : examples/enhanced_visual_training.cpp.s
+
+examples/final_visual_training.o: examples/final_visual_training.cpp.o
+.PHONY : examples/final_visual_training.o
+
+# target to build an object file
+examples/final_visual_training.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/final_visual_training.dir/build.make CMakeFiles/final_visual_training.dir/examples/final_visual_training.cpp.o
+.PHONY : examples/final_visual_training.cpp.o
+
+examples/final_visual_training.i: examples/final_visual_training.cpp.i
+.PHONY : examples/final_visual_training.i
+
+# target to preprocess a source file
+examples/final_visual_training.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/final_visual_training.dir/build.make CMakeFiles/final_visual_training.dir/examples/final_visual_training.cpp.i
+.PHONY : examples/final_visual_training.cpp.i
+
+examples/final_visual_training.s: examples/final_visual_training.cpp.s
+.PHONY : examples/final_visual_training.s
+
+# target to generate assembly for a file
+examples/final_visual_training.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/final_visual_training.dir/build.make CMakeFiles/final_visual_training.dir/examples/final_visual_training.cpp.s
+.PHONY : examples/final_visual_training.cpp.s
+
+examples/hyperparameter_optimization.o: examples/hyperparameter_optimization.cpp.o
+.PHONY : examples/hyperparameter_optimization.o
+
+# target to build an object file
+examples/hyperparameter_optimization.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_optimization.dir/build.make CMakeFiles/hyperparameter_optimization.dir/examples/hyperparameter_optimization.cpp.o
+.PHONY : examples/hyperparameter_optimization.cpp.o
+
+examples/hyperparameter_optimization.i: examples/hyperparameter_optimization.cpp.i
+.PHONY : examples/hyperparameter_optimization.i
+
+# target to preprocess a source file
+examples/hyperparameter_optimization.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_optimization.dir/build.make CMakeFiles/hyperparameter_optimization.dir/examples/hyperparameter_optimization.cpp.i
+.PHONY : examples/hyperparameter_optimization.cpp.i
+
+examples/hyperparameter_optimization.s: examples/hyperparameter_optimization.cpp.s
+.PHONY : examples/hyperparameter_optimization.s
+
+# target to generate assembly for a file
+examples/hyperparameter_optimization.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hyperparameter_optimization.dir/build.make CMakeFiles/hyperparameter_optimization.dir/examples/hyperparameter_optimization.cpp.s
+.PHONY : examples/hyperparameter_optimization.cpp.s
+
+examples/optimal_config_validation.o: examples/optimal_config_validation.cpp.o
+.PHONY : examples/optimal_config_validation.o
+
+# target to build an object file
+examples/optimal_config_validation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimal_config_validation.dir/build.make CMakeFiles/optimal_config_validation.dir/examples/optimal_config_validation.cpp.o
+.PHONY : examples/optimal_config_validation.cpp.o
+
+examples/optimal_config_validation.i: examples/optimal_config_validation.cpp.i
+.PHONY : examples/optimal_config_validation.i
+
+# target to preprocess a source file
+examples/optimal_config_validation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimal_config_validation.dir/build.make CMakeFiles/optimal_config_validation.dir/examples/optimal_config_validation.cpp.i
+.PHONY : examples/optimal_config_validation.cpp.i
+
+examples/optimal_config_validation.s: examples/optimal_config_validation.cpp.s
+.PHONY : examples/optimal_config_validation.s
+
+# target to generate assembly for a file
+examples/optimal_config_validation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimal_config_validation.dir/build.make CMakeFiles/optimal_config_validation.dir/examples/optimal_config_validation.cpp.s
+.PHONY : examples/optimal_config_validation.cpp.s
+
+examples/optimized_ppo_training.o: examples/optimized_ppo_training.cpp.o
+.PHONY : examples/optimized_ppo_training.o
+
+# target to build an object file
+examples/optimized_ppo_training.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_ppo_training.dir/build.make CMakeFiles/optimized_ppo_training.dir/examples/optimized_ppo_training.cpp.o
+.PHONY : examples/optimized_ppo_training.cpp.o
+
+examples/optimized_ppo_training.i: examples/optimized_ppo_training.cpp.i
+.PHONY : examples/optimized_ppo_training.i
+
+# target to preprocess a source file
+examples/optimized_ppo_training.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_ppo_training.dir/build.make CMakeFiles/optimized_ppo_training.dir/examples/optimized_ppo_training.cpp.i
+.PHONY : examples/optimized_ppo_training.cpp.i
+
+examples/optimized_ppo_training.s: examples/optimized_ppo_training.cpp.s
+.PHONY : examples/optimized_ppo_training.s
+
+# target to generate assembly for a file
+examples/optimized_ppo_training.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_ppo_training.dir/build.make CMakeFiles/optimized_ppo_training.dir/examples/optimized_ppo_training.cpp.s
+.PHONY : examples/optimized_ppo_training.cpp.s
+
+examples/phase1_configuration_tests.o: examples/phase1_configuration_tests.cpp.o
+.PHONY : examples/phase1_configuration_tests.o
+
+# target to build an object file
+examples/phase1_configuration_tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase1_configuration_tests.dir/build.make CMakeFiles/phase1_configuration_tests.dir/examples/phase1_configuration_tests.cpp.o
+.PHONY : examples/phase1_configuration_tests.cpp.o
+
+examples/phase1_configuration_tests.i: examples/phase1_configuration_tests.cpp.i
+.PHONY : examples/phase1_configuration_tests.i
+
+# target to preprocess a source file
+examples/phase1_configuration_tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase1_configuration_tests.dir/build.make CMakeFiles/phase1_configuration_tests.dir/examples/phase1_configuration_tests.cpp.i
+.PHONY : examples/phase1_configuration_tests.cpp.i
+
+examples/phase1_configuration_tests.s: examples/phase1_configuration_tests.cpp.s
+.PHONY : examples/phase1_configuration_tests.s
+
+# target to generate assembly for a file
+examples/phase1_configuration_tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase1_configuration_tests.dir/build.make CMakeFiles/phase1_configuration_tests.dir/examples/phase1_configuration_tests.cpp.s
+.PHONY : examples/phase1_configuration_tests.cpp.s
+
+examples/phase2_advanced_tuning.o: examples/phase2_advanced_tuning.cpp.o
+.PHONY : examples/phase2_advanced_tuning.o
+
+# target to build an object file
+examples/phase2_advanced_tuning.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_advanced_tuning.dir/build.make CMakeFiles/phase2_advanced_tuning.dir/examples/phase2_advanced_tuning.cpp.o
+.PHONY : examples/phase2_advanced_tuning.cpp.o
+
+examples/phase2_advanced_tuning.i: examples/phase2_advanced_tuning.cpp.i
+.PHONY : examples/phase2_advanced_tuning.i
+
+# target to preprocess a source file
+examples/phase2_advanced_tuning.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_advanced_tuning.dir/build.make CMakeFiles/phase2_advanced_tuning.dir/examples/phase2_advanced_tuning.cpp.i
+.PHONY : examples/phase2_advanced_tuning.cpp.i
+
+examples/phase2_advanced_tuning.s: examples/phase2_advanced_tuning.cpp.s
+.PHONY : examples/phase2_advanced_tuning.s
+
+# target to generate assembly for a file
+examples/phase2_advanced_tuning.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/phase2_advanced_tuning.dir/build.make CMakeFiles/phase2_advanced_tuning.dir/examples/phase2_advanced_tuning.cpp.s
+.PHONY : examples/phase2_advanced_tuning.cpp.s
+
+examples/simple_phase2_test.o: examples/simple_phase2_test.cpp.o
+.PHONY : examples/simple_phase2_test.o
+
+# target to build an object file
+examples/simple_phase2_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_phase2_test.dir/build.make CMakeFiles/simple_phase2_test.dir/examples/simple_phase2_test.cpp.o
+.PHONY : examples/simple_phase2_test.cpp.o
+
+examples/simple_phase2_test.i: examples/simple_phase2_test.cpp.i
+.PHONY : examples/simple_phase2_test.i
+
+# target to preprocess a source file
+examples/simple_phase2_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_phase2_test.dir/build.make CMakeFiles/simple_phase2_test.dir/examples/simple_phase2_test.cpp.i
+.PHONY : examples/simple_phase2_test.cpp.i
+
+examples/simple_phase2_test.s: examples/simple_phase2_test.cpp.s
+.PHONY : examples/simple_phase2_test.s
+
+# target to generate assembly for a file
+examples/simple_phase2_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_phase2_test.dir/build.make CMakeFiles/simple_phase2_test.dir/examples/simple_phase2_test.cpp.s
+.PHONY : examples/simple_phase2_test.cpp.s
+
+examples/stability_analysis_test.o: examples/stability_analysis_test.cpp.o
+.PHONY : examples/stability_analysis_test.o
+
+# target to build an object file
+examples/stability_analysis_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stability_analysis_test.dir/build.make CMakeFiles/stability_analysis_test.dir/examples/stability_analysis_test.cpp.o
+.PHONY : examples/stability_analysis_test.cpp.o
+
+examples/stability_analysis_test.i: examples/stability_analysis_test.cpp.i
+.PHONY : examples/stability_analysis_test.i
+
+# target to preprocess a source file
+examples/stability_analysis_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stability_analysis_test.dir/build.make CMakeFiles/stability_analysis_test.dir/examples/stability_analysis_test.cpp.i
+.PHONY : examples/stability_analysis_test.cpp.i
+
+examples/stability_analysis_test.s: examples/stability_analysis_test.cpp.s
+.PHONY : examples/stability_analysis_test.s
+
+# target to generate assembly for a file
+examples/stability_analysis_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stability_analysis_test.dir/build.make CMakeFiles/stability_analysis_test.dir/examples/stability_analysis_test.cpp.s
+.PHONY : examples/stability_analysis_test.cpp.s
 
 src/environment/scalable_cartpole.o: src/environment/scalable_cartpole.cpp.o
 .PHONY : src/environment/scalable_cartpole.o
@@ -824,6 +1011,30 @@ src/ppo/value_network.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/value_network_lib.dir/build.make CMakeFiles/value_network_lib.dir/src/ppo/value_network.cpp.s
 .PHONY : src/ppo/value_network.cpp.s
 
+src/utils/ppo_debugger.o: src/utils/ppo_debugger.cpp.o
+.PHONY : src/utils/ppo_debugger.o
+
+# target to build an object file
+src/utils/ppo_debugger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_debugger_lib.dir/build.make CMakeFiles/ppo_debugger_lib.dir/src/utils/ppo_debugger.cpp.o
+.PHONY : src/utils/ppo_debugger.cpp.o
+
+src/utils/ppo_debugger.i: src/utils/ppo_debugger.cpp.i
+.PHONY : src/utils/ppo_debugger.i
+
+# target to preprocess a source file
+src/utils/ppo_debugger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_debugger_lib.dir/build.make CMakeFiles/ppo_debugger_lib.dir/src/utils/ppo_debugger.cpp.i
+.PHONY : src/utils/ppo_debugger.cpp.i
+
+src/utils/ppo_debugger.s: src/utils/ppo_debugger.cpp.s
+.PHONY : src/utils/ppo_debugger.s
+
+# target to generate assembly for a file
+src/utils/ppo_debugger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ppo_debugger_lib.dir/build.make CMakeFiles/ppo_debugger_lib.dir/src/utils/ppo_debugger.cpp.s
+.PHONY : src/utils/ppo_debugger.cpp.s
+
 src/utils/training_monitor.o: src/utils/training_monitor.cpp.o
 .PHONY : src/utils/training_monitor.o
 
@@ -968,6 +1179,30 @@ tests/neural_network/test_neural_network.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_neural_network.dir/build.make CMakeFiles/test_neural_network.dir/tests/neural_network/test_neural_network.cpp.s
 .PHONY : tests/neural_network/test_neural_network.cpp.s
 
+tests/ppo/test_gradient_computation.o: tests/ppo/test_gradient_computation.cpp.o
+.PHONY : tests/ppo/test_gradient_computation.o
+
+# target to build an object file
+tests/ppo/test_gradient_computation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_gradient_computation.dir/build.make CMakeFiles/test_gradient_computation.dir/tests/ppo/test_gradient_computation.cpp.o
+.PHONY : tests/ppo/test_gradient_computation.cpp.o
+
+tests/ppo/test_gradient_computation.i: tests/ppo/test_gradient_computation.cpp.i
+.PHONY : tests/ppo/test_gradient_computation.i
+
+# target to preprocess a source file
+tests/ppo/test_gradient_computation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_gradient_computation.dir/build.make CMakeFiles/test_gradient_computation.dir/tests/ppo/test_gradient_computation.cpp.i
+.PHONY : tests/ppo/test_gradient_computation.cpp.i
+
+tests/ppo/test_gradient_computation.s: tests/ppo/test_gradient_computation.cpp.s
+.PHONY : tests/ppo/test_gradient_computation.s
+
+# target to generate assembly for a file
+tests/ppo/test_gradient_computation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_gradient_computation.dir/build.make CMakeFiles/test_gradient_computation.dir/tests/ppo/test_gradient_computation.cpp.s
+.PHONY : tests/ppo/test_gradient_computation.cpp.s
+
 tests/ppo/test_policy_network.o: tests/ppo/test_policy_network.cpp.o
 .PHONY : tests/ppo/test_policy_network.o
 
@@ -1040,6 +1275,30 @@ tests/ppo/test_ppo_buffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ppo_buffer.dir/build.make CMakeFiles/test_ppo_buffer.dir/tests/ppo/test_ppo_buffer.cpp.s
 .PHONY : tests/ppo/test_ppo_buffer.cpp.s
 
+tests/ppo/test_value_function_stability.o: tests/ppo/test_value_function_stability.cpp.o
+.PHONY : tests/ppo/test_value_function_stability.o
+
+# target to build an object file
+tests/ppo/test_value_function_stability.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_function_stability.dir/build.make CMakeFiles/test_value_function_stability.dir/tests/ppo/test_value_function_stability.cpp.o
+.PHONY : tests/ppo/test_value_function_stability.cpp.o
+
+tests/ppo/test_value_function_stability.i: tests/ppo/test_value_function_stability.cpp.i
+.PHONY : tests/ppo/test_value_function_stability.i
+
+# target to preprocess a source file
+tests/ppo/test_value_function_stability.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_function_stability.dir/build.make CMakeFiles/test_value_function_stability.dir/tests/ppo/test_value_function_stability.cpp.i
+.PHONY : tests/ppo/test_value_function_stability.cpp.i
+
+tests/ppo/test_value_function_stability.s: tests/ppo/test_value_function_stability.cpp.s
+.PHONY : tests/ppo/test_value_function_stability.s
+
+# target to generate assembly for a file
+tests/ppo/test_value_function_stability.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_value_function_stability.dir/build.make CMakeFiles/test_value_function_stability.dir/tests/ppo/test_value_function_stability.cpp.s
+.PHONY : tests/ppo/test_value_function_stability.cpp.s
+
 tests/ppo/test_value_network.o: tests/ppo/test_value_network.cpp.o
 .PHONY : tests/ppo/test_value_network.o
 
@@ -1098,49 +1357,68 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... activation_lib"
-	@echo "... basic_ppo_training"
 	@echo "... cartpole_lib"
 	@echo "... dense_layer_lib"
-	@echo "... fixed_ppo_training"
-	@echo "... hyperparameter_tuning"
+	@echo "... diagnostic_ppo_training"
+	@echo "... enhanced_visual_training"
+	@echo "... final_visual_training"
+	@echo "... hyperparameter_optimization"
 	@echo "... matrix_lib"
 	@echo "... neural_network_lib"
+	@echo "... optimal_config_validation"
+	@echo "... optimized_ppo_training"
+	@echo "... phase1_configuration_tests"
+	@echo "... phase2_advanced_tuning"
 	@echo "... policy_network_lib"
 	@echo "... ppo_agent_lib"
 	@echo "... ppo_buffer_lib"
-	@echo "... simple_hyperparameter_test"
+	@echo "... ppo_debugger_lib"
+	@echo "... simple_phase2_test"
+	@echo "... stability_analysis_test"
 	@echo "... test_activation_functions"
 	@echo "... test_cartpole"
 	@echo "... test_dense_layer"
+	@echo "... test_gradient_computation"
 	@echo "... test_matrix"
 	@echo "... test_neural_network"
 	@echo "... test_policy_network"
 	@echo "... test_ppo_agent"
 	@echo "... test_ppo_buffer"
 	@echo "... test_training_monitor"
+	@echo "... test_value_function_stability"
 	@echo "... test_value_network"
 	@echo "... training_monitor_lib"
-	@echo "... tuned_ppo_training"
 	@echo "... value_network_lib"
-	@echo "... visualization_demo"
-	@echo "... examples/basic_ppo_training.o"
-	@echo "... examples/basic_ppo_training.i"
-	@echo "... examples/basic_ppo_training.s"
-	@echo "... examples/fixed_ppo_training.o"
-	@echo "... examples/fixed_ppo_training.i"
-	@echo "... examples/fixed_ppo_training.s"
-	@echo "... examples/hyperparameter_tuning.o"
-	@echo "... examples/hyperparameter_tuning.i"
-	@echo "... examples/hyperparameter_tuning.s"
-	@echo "... examples/simple_hyperparameter_test.o"
-	@echo "... examples/simple_hyperparameter_test.i"
-	@echo "... examples/simple_hyperparameter_test.s"
-	@echo "... examples/tuned_ppo_training.o"
-	@echo "... examples/tuned_ppo_training.i"
-	@echo "... examples/tuned_ppo_training.s"
-	@echo "... examples/visualization_demo.o"
-	@echo "... examples/visualization_demo.i"
-	@echo "... examples/visualization_demo.s"
+	@echo "... examples/diagnostic_ppo_training.o"
+	@echo "... examples/diagnostic_ppo_training.i"
+	@echo "... examples/diagnostic_ppo_training.s"
+	@echo "... examples/enhanced_visual_training.o"
+	@echo "... examples/enhanced_visual_training.i"
+	@echo "... examples/enhanced_visual_training.s"
+	@echo "... examples/final_visual_training.o"
+	@echo "... examples/final_visual_training.i"
+	@echo "... examples/final_visual_training.s"
+	@echo "... examples/hyperparameter_optimization.o"
+	@echo "... examples/hyperparameter_optimization.i"
+	@echo "... examples/hyperparameter_optimization.s"
+	@echo "... examples/optimal_config_validation.o"
+	@echo "... examples/optimal_config_validation.i"
+	@echo "... examples/optimal_config_validation.s"
+	@echo "... examples/optimized_ppo_training.o"
+	@echo "... examples/optimized_ppo_training.i"
+	@echo "... examples/optimized_ppo_training.s"
+	@echo "... examples/phase1_configuration_tests.o"
+	@echo "... examples/phase1_configuration_tests.i"
+	@echo "... examples/phase1_configuration_tests.s"
+	@echo "... examples/phase2_advanced_tuning.o"
+	@echo "... examples/phase2_advanced_tuning.i"
+	@echo "... examples/phase2_advanced_tuning.s"
+	@echo "... examples/simple_phase2_test.o"
+	@echo "... examples/simple_phase2_test.i"
+	@echo "... examples/simple_phase2_test.s"
+	@echo "... examples/stability_analysis_test.o"
+	@echo "... examples/stability_analysis_test.i"
+	@echo "... examples/stability_analysis_test.s"
 	@echo "... src/environment/scalable_cartpole.o"
 	@echo "... src/environment/scalable_cartpole.i"
 	@echo "... src/environment/scalable_cartpole.s"
@@ -1168,6 +1446,9 @@ help:
 	@echo "... src/ppo/value_network.o"
 	@echo "... src/ppo/value_network.i"
 	@echo "... src/ppo/value_network.s"
+	@echo "... src/utils/ppo_debugger.o"
+	@echo "... src/utils/ppo_debugger.i"
+	@echo "... src/utils/ppo_debugger.s"
 	@echo "... src/utils/training_monitor.o"
 	@echo "... src/utils/training_monitor.i"
 	@echo "... src/utils/training_monitor.s"
@@ -1186,6 +1467,9 @@ help:
 	@echo "... tests/neural_network/test_neural_network.o"
 	@echo "... tests/neural_network/test_neural_network.i"
 	@echo "... tests/neural_network/test_neural_network.s"
+	@echo "... tests/ppo/test_gradient_computation.o"
+	@echo "... tests/ppo/test_gradient_computation.i"
+	@echo "... tests/ppo/test_gradient_computation.s"
 	@echo "... tests/ppo/test_policy_network.o"
 	@echo "... tests/ppo/test_policy_network.i"
 	@echo "... tests/ppo/test_policy_network.s"
@@ -1195,6 +1479,9 @@ help:
 	@echo "... tests/ppo/test_ppo_buffer.o"
 	@echo "... tests/ppo/test_ppo_buffer.i"
 	@echo "... tests/ppo/test_ppo_buffer.s"
+	@echo "... tests/ppo/test_value_function_stability.o"
+	@echo "... tests/ppo/test_value_function_stability.i"
+	@echo "... tests/ppo/test_value_function_stability.s"
 	@echo "... tests/ppo/test_value_network.o"
 	@echo "... tests/ppo/test_value_network.i"
 	@echo "... tests/ppo/test_value_network.s"

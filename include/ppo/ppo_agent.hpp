@@ -62,6 +62,7 @@ public:
     // Buffer status
     bool is_ready_for_update() const { return buffer.is_full(); }
     size_t get_buffer_size() const { return buffer.size(); }
+    const PPOBuffer& get_buffer() const { return buffer; }
     
     // Model management
     void save_models(const std::string& policy_filename, const std::string& value_filename) const;

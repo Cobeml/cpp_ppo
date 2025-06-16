@@ -1,25 +1,19 @@
 #include "../../include/ppo/ppo_agent.hpp"
 #include <algorithm>
-
-// Helper function for clipping
-namespace {
-    double clip(double value, double min_val, double max_val) {
-        return std::max(min_val, std::min(value, max_val));
-    }
-}
+#include <random>
 
 PPOAgent::PPOAgent(size_t state_size, size_t action_size, size_t buffer_size, 
                    double policy_lr, double value_lr)
     : policy(std::make_unique<PolicyNetwork>(state_size, action_size, policy_lr)),
       value_function(std::make_unique<ValueNetwork>(state_size, value_lr)),
       buffer(buffer_size),
-      clip_epsilon(0.2),
-      entropy_coefficient(0.01),
-      value_loss_coefficient(0.5),
-      epochs_per_update(10),
-      batch_size(64),
-      gamma(0.99),
-      lambda(0.95),
+      clip_epsilon(0.2),          // PPO Detail: Standard clipping parameter
+      entropy_coefficient(0.01),  // PPO Detail: Small entropy bonus
+      value_loss_coefficient(0.5), // PPO Detail: Value loss weight
+      epochs_per_update(4),       // PPO Detail: Multiple epochs per update
+      batch_size(64),             // PPO Detail: Standard batch size
+      gamma(0.99),                // PPO Detail: Standard discount factor
+      lambda(0.95),               // PPO Detail: GAE lambda
       last_policy_loss(0.0),
       last_value_loss(0.0),
       last_entropy(0.0),
@@ -29,10 +23,8 @@ PPOAgent::PPOAgent(size_t state_size, size_t action_size, size_t buffer_size,
 
 int PPOAgent::select_action(const Matrix& state) {
     if (evaluation_mode) {
-        // Deterministic action for evaluation
         return policy->get_best_action(state);
     } else {
-        // Stochastic action for training
         return policy->sample_action(state);
     }
 }
@@ -48,14 +40,18 @@ void PPOAgent::store_experience(const Matrix& state, int action, double reward,
     buffer.add(exp);
 }
 
+// Standard PPO update algorithm
+// Based on: https://arxiv.org/abs/1707.06347 and https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/
 void PPOAgent::update() {
     if (!buffer.is_full()) {
         throw std::runtime_error("Cannot update: buffer is not full");
     }
     
-    // Compute advantages and returns
+    // PPO Detail: Compute returns and advantages using GAE
     buffer.compute_returns(gamma);
     buffer.compute_advantages(gamma, lambda);
+    
+    // PPO Detail: Normalize advantages for stability
     buffer.normalize_advantages();
     
     // Get all experiences
@@ -67,26 +63,32 @@ void PPOAgent::update() {
     double total_entropy = 0.0;
     int update_count = 0;
     
-    // Multiple epochs of updates
+    // PPO Detail: Multiple epochs of updates
     for (int epoch = 0; epoch < epochs_per_update; ++epoch) {
+        // PPO Detail: Shuffle data each epoch
+        std::vector<size_t> indices(all_experiences.size());
+        std::iota(indices.begin(), indices.end(), 0);
+        std::random_device rd;
+        std::mt19937 g(rd());
+        std::shuffle(indices.begin(), indices.end(), g);
+        
         // Create mini-batches
         size_t num_batches = (all_experiences.size() + batch_size - 1) / batch_size;
         
         for (size_t batch_idx = 0; batch_idx < num_batches; ++batch_idx) {
-            // Get batch
+            // Get batch indices
             size_t start_idx = batch_idx * batch_size;
             size_t end_idx = std::min(start_idx + batch_size, all_experiences.size());
-            std::vector<Experience> batch(all_experiences.begin() + start_idx, 
-                                         all_experiences.begin() + end_idx);
             
-            // Compute losses
+            std::vector<Experience> batch;
+            for (size_t i = start_idx; i < end_idx; ++i) {
+                batch.push_back(all_experiences[indices[i]]);
+            }
+            
+            // Compute losses for monitoring
             double policy_loss = compute_clipped_surrogate_loss(batch);
             double value_loss = compute_value_loss(batch);
             double entropy = compute_entropy_bonus(batch);
-            
-            // Total loss (note: we maximize entropy, so it's subtracted)
-            // We don't actually use this for gradient computation since we update
-            // policy and value networks separately
             
             // Accumulate statistics
             total_policy_loss += policy_loss;
@@ -94,8 +96,8 @@ void PPOAgent::update() {
             total_entropy += entropy;
             update_count++;
             
-            // Update networks
-            // Policy update
+            // Update networks directly
+            // Update policy
             std::vector<Matrix> states;
             std::vector<int> actions;
             std::vector<double> advantages;
@@ -110,13 +112,16 @@ void PPOAgent::update() {
             
             policy->compute_policy_gradient(states, actions, advantages, old_log_probs, clip_epsilon);
             
-            // Value update
+            // Update value function
+            std::vector<Matrix> value_states;
             std::vector<double> returns;
+            
             for (const auto& exp : batch) {
+                value_states.push_back(exp.state);
                 returns.push_back(exp.return_value);
             }
             
-            value_function->train_on_batch(states, returns);
+            value_function->train_on_batch(value_states, returns);
         }
     }
     
@@ -130,26 +135,22 @@ void PPOAgent::update() {
     buffer.clear();
 }
 
+// Methods moved inline for simplicity
+
 double PPOAgent::compute_clipped_surrogate_loss(const std::vector<Experience>& batch) {
     double total_loss = 0.0;
     
     for (const auto& exp : batch) {
-        // Compute current log probability
         double current_log_prob = policy->compute_log_prob(exp.state, exp.action);
-        
-        // Compute probability ratio
         double ratio = std::exp(current_log_prob - exp.log_prob);
         
-        // Compute surrogate losses
         double surrogate1 = ratio * exp.advantage;
-        double surrogate2 = clip(ratio, 1.0 - clip_epsilon, 1.0 + clip_epsilon) * exp.advantage;
+        double surrogate2 = std::clamp(ratio, 1.0 - clip_epsilon, 1.0 + clip_epsilon) * exp.advantage;
         
-        // Take minimum (this is a maximization problem, so we negate later)
         total_loss += std::min(surrogate1, surrogate2);
     }
     
-    // Return negative because we're maximizing
-    return -total_loss / batch.size();
+    return -total_loss / batch.size();  // Return positive loss
 }
 
 double PPOAgent::compute_value_loss(const std::vector<Experience>& batch) {
@@ -188,3 +189,5 @@ void PPOAgent::set_learning_rates(double policy_lr, double value_lr) {
     policy->set_learning_rate(policy_lr);
     value_function->set_learning_rate(value_lr);
 }
+
+// set_evaluation_mode is defined inline in header 

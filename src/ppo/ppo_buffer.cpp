@@ -1,18 +1,18 @@
 #include "../../include/ppo/ppo_buffer.hpp"
-#include <stdexcept>
-#include <random>
+#include <algorithm>
 #include <numeric>
+#include <random>
 
 PPOBuffer::PPOBuffer(size_t size) : max_size(size), current_size(0) {
-    buffer.reserve(size);
+    buffer.reserve(max_size);
 }
 
-void PPOBuffer::add(const Experience& exp) {
+void PPOBuffer::add(const Experience& experience) {
     if (current_size < max_size) {
-        buffer.push_back(exp);
+        buffer.push_back(experience);
         current_size++;
     } else {
-        throw std::runtime_error("PPOBuffer is full. Call clear() before adding more experiences.");
+        throw std::runtime_error("Buffer is full. Call clear() before adding new experiences.");
     }
 }
 
@@ -21,57 +21,70 @@ void PPOBuffer::clear() {
     current_size = 0;
 }
 
+// Note: is_full() and size() are defined inline in header
+
+// Standard GAE (Generalized Advantage Estimation) computation
+// Based on: https://arxiv.org/abs/1506.02438
 void PPOBuffer::compute_advantages(double gamma, double lambda) {
     if (buffer.empty()) return;
     
-    // Initialize the next value for GAE computation
-    double next_value = 0.0;
+    // Initialize last values for backward computation
+    double next_value = 0.0;  // Bootstrap with 0 for terminal states
     double next_advantage = 0.0;
     
-    // Compute advantages using GAE (Generalized Advantage Estimation)
-    // Working backwards through the trajectory
+    // Compute advantages backwards through trajectory
     for (int i = static_cast<int>(buffer.size()) - 1; i >= 0; --i) {
-        double delta = buffer[i].reward + (buffer[i].done ? 0.0 : gamma * next_value) - buffer[i].value;
-        buffer[i].advantage = delta + (buffer[i].done ? 0.0 : gamma * lambda * next_advantage);
+        // Handle terminal states properly
+        if (buffer[i].done) {
+            next_value = 0.0;
+            next_advantage = 0.0;
+        }
         
-        // Update for next iteration (which is previous timestep)
+        // Standard GAE computation
+        double delta = buffer[i].reward + gamma * next_value - buffer[i].value;
+        buffer[i].advantage = delta + gamma * lambda * next_advantage;
+        
+        // Update for next iteration (previous timestep)
         next_value = buffer[i].value;
         next_advantage = buffer[i].advantage;
     }
 }
 
+// Standard discounted returns computation
 void PPOBuffer::compute_returns(double gamma) {
     if (buffer.empty()) return;
     
-    // Compute discounted returns
     double running_return = 0.0;
     
-    // Working backwards through the trajectory
+    // Compute returns backwards through trajectory
     for (int i = static_cast<int>(buffer.size()) - 1; i >= 0; --i) {
         if (buffer[i].done) {
-            running_return = 0.0;
+            running_return = 0.0;  // Reset at episode boundaries
         }
         running_return = buffer[i].reward + gamma * running_return;
         buffer[i].return_value = running_return;
     }
 }
 
+// Standard advantage normalization (PPO Detail #1)
+// Normalizes advantages to have zero mean and unit variance
 void PPOBuffer::normalize_advantages() {
     if (buffer.empty()) return;
     
-    // Compute mean and standard deviation of advantages
+    // Compute mean
     double mean = 0.0;
     for (const auto& exp : buffer) {
         mean += exp.advantage;
     }
     mean /= buffer.size();
     
+    // Compute standard deviation
     double variance = 0.0;
     for (const auto& exp : buffer) {
-        variance += std::pow(exp.advantage - mean, 2);
+        variance += (exp.advantage - mean) * (exp.advantage - mean);
     }
     variance /= buffer.size();
-    double std_dev = std::sqrt(variance + 1e-8); // Add small epsilon for numerical stability
+    double std_dev = std::sqrt(variance + 1e-8);  // Small epsilon for numerical stability
     
     // Normalize advantages
     for (auto& exp : buffer) {
@@ -79,65 +92,11 @@ void PPOBuffer::normalize_advantages() {
     }
 }
 
-void PPOBuffer::normalize_returns() {
-    if (buffer.empty()) return;
-    
-    // Compute mean and standard deviation of returns
-    double mean = 0.0;
-    for (const auto& exp : buffer) {
-        mean += exp.return_value;
-    }
-    mean /= buffer.size();
-    
-    double variance = 0.0;
-    for (const auto& exp : buffer) {
-        variance += std::pow(exp.return_value - mean, 2);
-    }
-    variance /= buffer.size();
-    double std_dev = std::sqrt(variance + 1e-8); // Add small epsilon for numerical stability
-    
-    // Normalize returns
-    for (auto& exp : buffer) {
-        exp.return_value = (exp.return_value - mean) / std_dev;
-    }
-}
-
 std::vector<Experience> PPOBuffer::get_all_experiences() const {
     return buffer;
 }
 
-std::vector<Experience> PPOBuffer::get_batch(size_t batch_size) const {
-    if (batch_size > buffer.size()) {
-        return buffer;
-    }
-    
-    // Return first batch_size elements
-    return std::vector<Experience>(buffer.begin(), buffer.begin() + batch_size);
-}
-
-std::vector<Experience> PPOBuffer::get_shuffled_batch(size_t batch_size) const {
-    if (batch_size > buffer.size()) {
-        return get_all_experiences();
-    }
-    
-    // Create indices and shuffle them
-    std::vector<size_t> indices(buffer.size());
-    std::iota(indices.begin(), indices.end(), 0);
-    
-    std::random_device rd;
-    std::mt19937 g(rd());
-    std::shuffle(indices.begin(), indices.end(), g);
-    
-    // Select first batch_size elements
-    std::vector<Experience> batch;
-    batch.reserve(batch_size);
-    for (size_t i = 0; i < batch_size; ++i) {
-        batch.push_back(buffer[indices[i]]);
-    }
-    
-    return batch;
-}
-
+// Simple statistics for monitoring
 double PPOBuffer::get_average_reward() const {
     if (buffer.empty()) return 0.0;
     
@@ -166,6 +125,33 @@ double PPOBuffer::get_average_return() const {
         sum += exp.return_value;
     }
     return sum / buffer.size();
+}
+
+// Additional methods from header interface
+std::vector<Experience> PPOBuffer::get_batch(size_t batch_size) const {
+    if (batch_size >= buffer.size()) {
+        return buffer;
+    }
+    return std::vector<Experience>(buffer.begin(), buffer.begin() + batch_size);
+}
+
+std::vector<Experience> PPOBuffer::get_shuffled_batch(size_t batch_size) const {
+    std::vector<size_t> indices(buffer.size());
+    std::iota(indices.begin(), indices.end(), 0);
+    
+    std::random_device rd;
+    std::mt19937 g(rd());
+    std::shuffle(indices.begin(), indices.end(), g);
+    
+    size_t actual_batch_size = std::min(batch_size, buffer.size());
+    std::vector<Experience> batch;
+    batch.reserve(actual_batch_size);
+    
+    for (size_t i = 0; i < actual_batch_size; ++i) {
+        batch.push_back(buffer[indices[i]]);
+    }
+    
+    return batch;
 }
 
 std::vector<Matrix> PPOBuffer::get_states() const {
@@ -230,3 +216,25 @@ std::vector<double> PPOBuffer::get_values() const {
     }
     return values;
 }
+
+// Standard return normalization (rarely used in modern PPO)
+void PPOBuffer::normalize_returns() {
+    if (buffer.empty()) return;
+    
+    double mean = 0.0;
+    for (const auto& exp : buffer) {
+        mean += exp.return_value;
+    }
+    mean /= buffer.size();
+    
+    double variance = 0.0;
+    for (const auto& exp : buffer) {
+        variance += (exp.return_value - mean) * (exp.return_value - mean);
+    }
+    variance /= buffer.size();
+    double std_dev = std::sqrt(variance + 1e-8);
+    
+    for (auto& exp : buffer) {
+        exp.return_value = (exp.return_value - mean) / std_dev;
+    }
+} 

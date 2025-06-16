@@ -4,21 +4,18 @@
 ValueNetwork::ValueNetwork(size_t state_size, double lr) 
     : NeuralNetwork(lr) {
     
-    // Build value network architecture
-    // Input layer -> Hidden layer (64) -> Hidden layer (64) -> Output layer (1)
-    add_layer(state_size, 64, std::make_unique<ReLU>());
-    add_layer(64, 64, std::make_unique<ReLU>());
-    add_layer(64, 1, std::make_unique<Linear>()); // Single value output
+    // Standard PPO value network architecture
+    // Based on: https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/
+    add_layer(state_size, 64, std::make_unique<Tanh>());  // PPO Detail: Use Tanh activation
+    add_layer(64, 64, std::make_unique<Tanh>());          // Hidden layer
+    add_layer(64, 1, std::make_unique<Linear>());         // Output value (no activation for unbounded values)
     
-    // Initialize weights appropriately
+    // PPO Detail: Proper weight initialization
     initialize_all_weights_xavier();
 }
 
 double ValueNetwork::estimate_value(const Matrix& state) {
-    // Forward pass to get value estimate
     Matrix output = forward(state);
-    
-    // Return the single value (output shape is (1, 1))
     return output(0, 0);
 }
 
@@ -26,8 +23,6 @@ std::vector<double> ValueNetwork::estimate_values_batch(const std::vector<Matrix
     std::vector<double> values;
     values.reserve(states.size());
     
-    // Process each state individually
-    // Note: This could be optimized with true batch processing
     for (const auto& state : states) {
         values.push_back(estimate_value(state));
     }
@@ -35,6 +30,8 @@ std::vector<double> ValueNetwork::estimate_values_batch(const std::vector<Matrix
     return values;
 }
 
+// Standard value network training
+// Based on: https://arxiv.org/abs/1707.06347 (Original PPO paper)
 void ValueNetwork::train_on_batch(const std::vector<Matrix>& states, 
                                  const std::vector<double>& targets) {
     if (states.size() != targets.size()) {
@@ -45,18 +42,21 @@ void ValueNetwork::train_on_batch(const std::vector<Matrix>& states,
         return;
     }
     
-    // Process each sample in the batch
+    // Simple standard training approach
     for (size_t i = 0; i < states.size(); ++i) {
         // Forward pass
-        Matrix output = forward(states[i]);
+        Matrix prediction = forward(states[i]);
         
         // Create target matrix
-        Matrix target(1, 1);
-        target(0, 0) = targets[i];
+        Matrix target_matrix(1, 1);
+        target_matrix(0, 0) = targets[i];
         
-        // Backward pass (this updates weights)
-        backward(target, output);
+        // Backward pass (standard MSE loss)
+        backward(target_matrix, prediction);
     }
+    
+    // PPO Detail: Light gradient clipping for stability
+    clip_all_gradients(0.5);
 }
 
 double ValueNetwork::compute_value_loss(const std::vector<Matrix>& states,
@@ -71,18 +71,13 @@ double ValueNetwork::compute_value_loss(const std::vector<Matrix>& states,
     
     double total_loss = 0.0;
     
-    // Compute MSE loss for each sample
+    // Compute MSE loss
     for (size_t i = 0; i < states.size(); ++i) {
-        // Forward pass (const_cast needed as forward is non-const)
-        Matrix output = const_cast<ValueNetwork*>(this)->forward(states[i]);
-        double prediction = output(0, 0);
-        
-        // Squared error
-        double error = prediction - targets[i];
+        Matrix prediction = const_cast<ValueNetwork*>(this)->forward(states[i]);
+        double error = prediction(0, 0) - targets[i];
         total_loss += error * error;
     }
     
-    // Return mean squared error
     return total_loss / states.size();
 }
 
@@ -96,28 +91,20 @@ void ValueNetwork::compute_value_gradient(const std::vector<Matrix>& states,
         return;
     }
     
-    // This method computes gradients without updating weights
-    // It's useful for algorithms that need to accumulate gradients
-    
     // Store original learning rate
     double original_lr = get_learning_rate();
-    
-    // Set learning rate to 0 to compute gradients without updating
-    set_learning_rate(0.0);
+    set_learning_rate(0.0);  // Compute gradients without updating
     
     // Process each sample
     for (size_t i = 0; i < states.size(); ++i) {
-        // Forward pass
-        Matrix output = forward(states[i]);
+        Matrix prediction = forward(states[i]);
         
-        // Create target matrix
-        Matrix target(1, 1);
-        target(0, 0) = targets[i];
+        Matrix target_matrix(1, 1);
+        target_matrix(0, 0) = targets[i];
         
-        // Backward pass (computes gradients but doesn't update due to lr=0)
-        backward(target, output);
+        backward(target_matrix, prediction);
     }
     
     // Restore original learning rate
     set_learning_rate(original_lr);
-}
+} 
